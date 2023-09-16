@@ -1,0 +1,942 @@
+{
+    "PIN": {
+        "Summary": {
+            "1.1": {
+                "title": "Overview",
+                "1.1.1": {
+                    "title": "Project Owner",
+                    "label": "Please indicate the name of the entity that owns the project.",
+                    "textarea": "__USER_INPUT__"
+                },
+                "1.1.2": {
+                    "title": "Project title",
+                    "label": "What is the title of the project? You are recommended to include the place and the technology type in the title.",
+                    "textarea": "__USER_INPUT__"
+                },
+                "1.1.3": {
+                    "title": "Country",
+                    "label": "In which country will the project be implemented?",
+                    "dropdown": {}
+                },
+                "1.1.4": {
+                    "title": "Brief project description",
+                    "label": "Briefly describe your project.",
+                    "textarea": "__USER_INPUT__"
+                },
+                "1.1.5": {
+                    "title": "Sectoral scopes and project type",
+                    "label": "Please indicate the sectoral scope(s) applicable to the Project.",
+                    "dropdown": {
+                        "1": {
+                            "title": "Energy",
+                            "dropdown": {
+                                "1.1": {
+                                    "title": "Energy generation",
+                                    "dropdown": {
+                                        "1.1.1": {
+                                            "title": "Energy (renewable / non-renewable sources)"
+                                        },
+                                        "1.1.2": {
+                                            "title": "Thermal energy generation"
+                                        },
+                                        "1.1.3": {
+                                            "title": "Renewables"
+                                        }
+                                    }
+                                },
+                                "1.2": {
+                                    "title": "Energy distribution",
+                                    "dropdown": {
+                                        "1.2.1": {
+                                            "title": "Energy distribution"
+                                        }
+                                    }
+                                },
+                                "1.3": {
+                                    "title": "Energy demand",
+                                    "dropdown": {
+                                        "1.3.1": {
+                                            "title": "Energy demand"
+                                        },
+                                        "1.3.2": {
+                                            "title": "End-use energy efficiency"
+                                        },
+                                        "1.3.3": {
+                                            "title": "Renewable energy connected to mini-grid or off grid solutions"
+                                        },
+                                        "1.3.4": {
+                                            "title": "Energy efficiency improvements (fuel switching, waste heat recovery, cogeneration)"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "2": {
+                            "title": "Manufacturing",
+                            "dropdown": {
+                                "2.1": {
+                                    "title": "Manufacturing industries"
+                                },
+                                "2.2": {
+                                    "title": "Cement and lime production"
+                                }
+                            }
+                        },
+                        "3": {
+                            "title": "Chemicals",
+                            "dropdown": {
+                                "3.1": {
+                                    "title": "Chemical industry"
+                                },
+                                "3.2": {
+                                    "title": "Caprolactam, nitric and adipic acid production"
+                                },
+                                "3.3": {
+                                    "title": "Reduced emissions from destruction of N2O in manufacturing"
+                                }
+                            }
+                        },
+                        "4": {
+                            "title": "Construction",
+                            "dropdown": {
+                                "4.1": {
+                                    "title": "Construction"
+                                }
+                            }
+                        },
+                        "5": {
+                            "title": "Construction",
+                            "dropdown": {
+                                "5.1": {
+                                    "title": "Transport"
+                                }
+                            }
+                        },
+                        "6": {
+                            "title": "Mining/mineral",
+                            "dropdown": {
+                                "6.1": {
+                                    "title": "Mining/mineral production"
+                                }
+                            }
+                        },
+                        "7": {
+                            "title": "Metal",
+                            "dropdown": {
+                                "7.1": {
+                                    "title": "Metal production"
+                                },
+                                "7.2": {
+                                    "title": "Aluminium and magnesium production"
+                                },
+                                "7.3": {
+                                    "title": "Iron, steel and ferro-alloy production"
+                                }
+                            }
+                        },
+                        "8": {
+                            "title": "Fugitive emissions from fuels",
+                            "dropdown": {
+                                "8.1": {
+                                    "title": "Fugitive emissions from fuels"
+                                }
+                            }
+                        },
+                        "9": {
+                            "title": "Fugitive emissions from industrial processes",
+                            "dropdown": {
+                                "9.1": {
+                                    "title": "Coal mine methane destruction"
+                                },
+                                "9.2": {
+                                    "title": "Hydrofluorocarbons (HFCs)"
+                                },
+                                "9.3": {
+                                    "title": "Chlorofluorocarbons (CFCs)"
+                                },
+                                "9.4": {
+                                    "title": "Hydrochlorofluorocarbons (HCFCs)"
+                                },
+                                "9.5": {
+                                    "title": "Perfluorocarbons (PFC)"
+                                },
+                                "9.6": {
+                                    "title": "Sulphur hexafluoride (SF6)"
+                                },
+                                "9.7": {
+                                    "title": "Carbon tetrafluoride (CF4)"
+                                },
+                                "9.8": {
+                                    "title": "Halons"
+                                }
+                            }
+                        },
+                        "10": {
+                            "title": "Solvent",
+                            "dropdown": {
+                                "10.1": {
+                                    "title": "Solvent use"
+                                }
+                            }
+                        },
+                        "11": {
+                            "title": "Waste",
+                            "dropdown": {
+                                "11.1": {
+                                    "title": "Waste handling and disposal",
+                                    "dropdown": {
+                                        "11.1.1": {
+                                            "title": "Waste handling and disposal"
+                                        }
+                                    }
+                                },
+                                "11.2": {
+                                    "title": "Solid waste and wastewater",
+                                    "dropdown": {
+                                        "11.2.1": {
+                                            "title": "Solid waste and wastewater"
+                                        },
+                                        "11.2.2": {
+                                            "title": "Avoidance of methane production in wastewater treatment"
+                                        }
+                                    }
+                                },
+                                "11.3": {
+                                    "title": "Landfill",
+                                    "dropdown": {
+                                        "11.3.1": {
+                                            "title": "Capture and destruction of landfill gas"
+                                        },
+                                        "11.3.2": {
+                                            "title": "Capture and use of landfill gas (biodigestion, aerobic treatment)"
+                                        }
+                                    }
+                                },
+                                "11.4": {
+                                    "title": "Livestock and manure management",
+                                    "dropdown": {
+                                        "11.4.1": {
+                                            "title": "Livestock and manure management"
+                                        },
+                                        "11.4.2": {
+                                            "title": "Methane collection and/or destruction"
+                                        },
+                                        "11.4.3": {
+                                            "title": "Biogas control system"
+                                        },
+                                        "11.4.4": {
+                                            "title": "Livestock and other anaerobic digester operations"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "12": {
+                            "title": "Forestory, Agriculture and other land use",
+                            "dropdown": {
+                                "12.1": {
+                                    "title": "Afforestation, reforestation and revegetation",
+                                    "dropdown": {
+                                        "12.1.1": {
+                                            "title": "Afforestation, reforestation and revegetation"
+                                        },
+                                        "12.1.2": {
+                                            "title": "Urban forestry"
+                                        }
+                                    }
+                                },
+                                "12.2": {
+                                    "title": "Agricultural land management",
+                                    "dropdown": {
+                                        "12.2.1": {
+                                            "title": "Agricultural land management"
+                                        },
+                                        "12.2.2": {
+                                            "title": "Improved cropland management"
+                                        },
+                                        "12.2.3": {
+                                            "title": "Improved grassland management"
+                                        },
+                                        "12.2.4": {
+                                            "title": "Cropland and grassland land-use conversions"
+                                        }
+                                    }
+                                },
+                                "12.3": {
+                                    "title": "Other agriculture activities",
+                                    "dropdown": {
+                                        "12.3.1": {
+                                            "title": "Agricultural methane emission reduction"
+                                        },
+                                        "12.3.2": {
+                                            "title": "Agricultural carbon emissions reduction"
+                                        },
+                                        "12.3.3": {
+                                            "title": "Nitrogen management in crop production"
+                                        },
+                                        "12.3.4": {
+                                            "title": "Water management (in rice cultivation)"
+                                        },
+                                        "12.3.5": {
+                                            "title": "Carbon storage in soils (soil enrichment)"
+                                        },
+                                        "12.3.6": {
+                                            "title": "Agroforestry and silvopastoral systems"
+                                        }
+                                    }
+                                },
+                                "12.4": {
+                                    "title": "Improved forest management and forest protection",
+                                    "dropdown": {
+                                        "12.4.1": {
+                                            "title": "Improved forest management"
+                                        },
+                                        "12.4.2": {
+                                            "title": "Conservation of forests and woodlands"
+                                        }
+                                    }
+                                },
+                                "12.5": {
+                                    "title": "Avoiding planned deforestation and/or degradation",
+                                    "dropdown": {
+                                        "12.5.1": {
+                                            "title": "Avoiding planned deforestation and/or degradation"
+                                        },
+                                        "12.5.2": {
+                                            "title": "Avoiding unplanned deforestation and/or degradation"
+                                        }
+                                    }
+                                },
+                                "12.6": {
+                                    "title": "Avoided conversion of grassland and shrublands",
+                                    "dropdown": {
+                                        "12.6.1": {
+                                            "title": "Avoiding planned conversion"
+                                        },
+                                        "12.6.2": {
+                                            "title": "Avoiding unplanned conversion"
+                                        }
+                                    }
+                                },
+                                "12.7": {
+                                    "title": "Restoration and reforestation of degraded or damaged ecosystems",
+                                    "dropdown": {
+                                        "12.7.1": {
+                                            "title": "Restoration and reforestation of degraded or damaged ecosystems"
+                                        },
+                                        "12.7.2": {
+                                            "title": "Wetlands restoration and conservation"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "13": {
+                            "title": "Carbon capture and storage",
+                            "dropdown": {
+                                "13.1": {
+                                    "title": "Carbon capture and storage in geological formations"
+                                }
+                            }
+                        },
+                        "14": {
+                            "title": "Other community service activities",
+                            "dropdown": {
+                                "14.1": {
+                                    "title": "Water, sanitation and hygiene"
+                                }
+                            }
+                        }
+                    }
+                },
+                "1.1.6": {
+                    "title": "Technology to be employed",
+                    "label": "Please specify and explain the type of technology used in the Project. This may include: transfer of technology, history of this technology in the region/country/ area, experience in operating this technology, etc.",
+                    "textarea": "__USER_INPUT__"
+                },
+                "1.1.7": {
+                    "title": "Standard",
+                    "label": "What carbon standard are you planning to use?",
+                    "dropdown": [
+                        {
+                            "title": "Clean Development Mechanism"
+                        },
+                        {
+                            "title": "Global Carbon Council"
+                        },
+                        {
+                            "title": "VERRA Verified Carbon Standard"
+                        },
+                        {
+                            "title": "American Carbon Registry"
+                        },
+                        {
+                            "title": "Plan Vivo"
+                        },
+                        {
+                            "title": "Cercarbono"
+                        },
+                        {
+                            "title": "Climate Action Reserve"
+                        },
+                        {
+                            "title": "Other"
+                        }
+                    ]
+                },
+                "1.1.8": {
+                    "title": "Methodology used",
+                    "label": "What methodology are you using?",
+                    "notes": {
+                        "title": "You may consult the list of methodologies below:",
+                        "list": [
+                            {
+                                "title": "Clean Development Mechanism;",
+                                "link": "https://cdm.unfccc.int/methodologies/methodologiesAccrv6/index.html"
+                            },
+                            {
+                                "title": "VCS;",
+                                "link": "https://verra.org/methodologies-main/"
+                            },
+                            {
+                                "title": "Gold Standard;",
+                                "link": "https://globalgoals.goldstandard.org/400-sdg-impact-quantification/"
+                            },
+                            {
+                                "title": "Global Carbon Council;",
+                                "link": "https://www.globalcarboncouncil.com/standards/baseline-monitoring-methodologies/#1633981295879-118def59-53c5"
+                            },
+                            {
+                                "title": "Cercarbono;",
+                                "link": "https://www.cercarbono.com/methodologies/"
+                            },
+                            {
+                                "title": "American Carbon Registry;",
+                                "link": "https://americancarbonregistry.org/carbon-accounting/standards-methodologies"
+                            },
+                            {
+                                "title": "Climate Action Reserve;",
+                                "link": "https://www.climateactionreserve.org/how/protocols/"
+                            },
+                            {
+                                "title": "Plan Vivo.",
+                                "link": "https://www.planvivo.org/methodologies"
+                            }
+                        ]
+                    },
+                    "textarea": "__USER_INPUT__",
+                    "dropdown": {
+                        "title": "Is there an existing methodology for the Project?",
+                        "options": [
+                            {
+                                "title": "The project is using an existing methodology"
+                            },
+                            {
+                                "title": "The project is using a newly-created methodology"
+                            },
+                            {
+                                "title": "The project proponent needs help to select a methodology"
+                            },
+                            {
+                                "title": "The project proponent needs help to create a methodology"
+                            }
+                        ]
+                    }
+                },
+                "1.1.9": {
+                    "title": "Scale",
+                    "label": "Specify project size depending estimate of GHG abated (in metric tons of CO2-equivalent anually during a period of t years)",
+                    "dropdown": [
+                        {
+                            "title": "up to 4,999 tCO2e/year"
+                        },
+                        {
+                            "title": "5,000 – 20,000 tCO2e/year"
+                        },
+                        {
+                            "title": "20,001 – 100,000 tCO2e/year"
+                        },
+                        {
+                            "title": "100,001 – 1,000,000 tCO2e/year"
+                        },
+                        {
+                            "title": ">1,000,000 tCO2e/year"
+                        }
+                    ]
+                }
+            }
+        },
+        "Details": {
+            "2.1": {
+                "title": "Project info and business model",
+                "2.1.1": {
+                    "title": "Detailed Project Description",
+                    "label": "Provide a comprehensive project overview. You may use the following structure:",
+                    "notes": [
+                        {
+                            "title": "A summary description of the technologies and activities to be implemented,"
+                        },
+                        {
+                            "title": "The location of the project,"
+                        },
+                        {
+                            "title": "An explanation of how the project is expected to generate GHG emission reductions or removals,"
+                        },
+                        {
+                            "title": "A brief description of the scenario that would occur in the absence of the project,"
+                        },
+                        {
+                            "title": "An estimate of annual average and total GHG emission reductions and removals,"
+                        },
+                        {
+                            "title": "A brief description of other environmental, social and economic benefits generated by the project."
+                        }
+                    ],
+                    "textarea": "__USER_INPUT__"
+                },
+                "2.1.3": {
+                    "title": "Innovation",
+                    "label": "Briefly highlight any innovative technology / project components.",
+                    "textarea": "__USER_INPUT__"
+                },
+                "2.1.4": {
+                    "a": {
+                        "title": "Sources of Finance",
+                        "label": "How do you plan to finance the Project?",
+                        "checkboxes": [
+                            {
+                                "title": "Grant"
+                            },
+                            {
+                                "title": "Loan"
+                            },
+                            {
+                                "title": "Equity investment"
+                            },
+                            {
+                                "title": "Personal funds"
+                            },
+                            {
+                                "title": "Public funding"
+                            },
+                            {
+                                "title": "Carbon forwards"
+                            },
+                            {
+                                "title": "Other (please specify)",
+                                "textarea": "__USER_INPUT__"
+                            }
+                        ]
+                    },
+                    "b": {
+                        "title": "Funding status",
+                        "label": "Have you already secured funding to finance the project?",
+                        "textarea": "__USER_INPUT__"
+                    }
+                },
+                "2.1.5": {
+                    "title": "Risks",
+                    "label": "Identify in the table below risks and uncertainties that may cause the Project to not perform as planned and/or may substantially affect the GHG Reductions expected to be achieved by the Project.",
+                    "dynamic_table": {
+                        "label": "Describe what actions will be taken to monitor and reduce the specific Project risk and uncertainty.",
+                        "table": {
+                            "columns": [
+                                {
+                                    "title": "Risk type",
+                                    "dropdown": [
+                                        {
+                                            "title": "Equipment failures"
+                                        },
+                                        {
+                                            "title": "Software bugs"
+                                        },
+                                        {
+                                            "title": "Integration"
+                                        },
+                                        {
+                                            "title": "Requirements"
+                                        },
+                                        {
+                                            "title": "GHG Quantification"
+                                        },
+                                        {
+                                            "title": "Permanence"
+                                        },
+                                        {
+                                            "title": "Conservation Easement Deduction"
+                                        },
+                                        {
+                                            "title": "Complexity"
+                                        },
+                                        {
+                                            "title": "References"
+                                        },
+                                        {
+                                            "title": "Analytical"
+                                        },
+                                        {
+                                            "title": "Market"
+                                        },
+                                        {
+                                            "title": "Regulatory"
+                                        },
+                                        {
+                                            "title": "External events"
+                                        },
+                                        {
+                                            "title": "Natural Disaster"
+                                        },
+                                        {
+                                            "title": "Social and Political"
+                                        },
+                                        {
+                                            "title": "Subcontractors and suppliers"
+                                        },
+                                        {
+                                            "title": "Resource"
+                                        },
+                                        {
+                                            "title": "Process"
+                                        },
+                                        {
+                                            "title": "Team"
+                                        },
+                                        {
+                                            "title": "Dependencies"
+                                        },
+                                        {
+                                            "title": "Staffing quality"
+                                        },
+                                        {
+                                            "title": "Decision making"
+                                        },
+                                        {
+                                            "title": "Financial risk"
+                                        },
+                                        {
+                                            "title": "Operational risk"
+                                        },
+                                        {
+                                            "title": "Strategic risk"
+                                        },
+                                        {
+                                            "title": "Compliance"
+                                        },
+                                        {
+                                            "title": "Communication risks"
+                                        },
+                                        {
+                                            "title": "Planning risks"
+                                        },
+                                        {
+                                            "title": "Control risks"
+                                        },
+                                        {
+                                            "title": "Estimation risk"
+                                        },
+                                        {
+                                            "title": "Change management risks"
+                                        },
+                                        {
+                                            "title": "Other, Please specify",
+                                            "textarea": "__USER_INPUT__"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Description",
+                                    "textarea": "__USER_INPUT__",
+                                    "placeholder": "What is the cause of the risk? How it affects the project?"
+                                },
+                                {
+                                    "title": "Mitigation strategy",
+                                    "textarea": "__USER_INPUT__",
+                                    "placeholder": "What is the cause of the risk? How it affects the project?"
+                                },
+                                {
+                                    "title": "Actions",
+                                    "buttons": [
+                                        {
+                                            "title": "Save"
+                                        },
+                                        {
+                                            "title": "Cancel"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "2.1.6": {
+                    "title": "Assumptions",
+                    "label": "Disclose any key project assumptions that are important to the Project. This may include assumptions around regulation and additionality, maturity of technology, commercial potential, financing availability, price, corresponding adjustments or commitment from national parties.",
+                    "textarea": "__USER_INPUT__"
+                }
+            },
+            "2.2": {
+                "title": "Project Owner details",
+                "2.2.1": {
+                    "title": "Primary contact name and title",
+                    "label": "Name and title of the representative.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.2.2": {
+                    "title": "Company",
+                    "label": "Name of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.2.3": {
+                    "title": "Address",
+                    "label": "Address of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.2.4": {
+                    "title": "Phone",
+                    "label": "Phone of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.2.5": {
+                    "title": "Email",
+                    "label": "E-mail of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.2.6": {
+                    "title": "Website",
+                    "label": "Please include the website of your organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.2.7": {
+                    "title": "Brief description of organization",
+                    "label": "Please provide brief description of organization.",
+                    "textarea": "__USER_INPUT__"
+                },
+                "2.2.8": {
+                    "title": "Experience with carbon markets",
+                    "label": "Describe experience related to the carbon markets.",
+                    "textarea": "__USER_INPUT__"
+                },
+                "2.2.9": {
+                    "title": "Experience with this project type",
+                    "label": "Describe experience related to the proposed activity.",
+                    "textarea": "__USER_INPUT__"
+                }
+            },
+            "2.3": {
+                "title": "Project Developer details",
+                "2.3.1": {
+                    "title": "Primary contact name and title",
+                    "label": "Name and title of the representative.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.3.2": {
+                    "title": "Company",
+                    "label": "Name of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.3.3": {
+                    "title": "Address",
+                    "label": "Address of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.3.4": {
+                    "title": "Phone",
+                    "label": "Phone of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.3.5": {
+                    "title": "Email",
+                    "label": "Email of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.3.6": {
+                    "title": "Website",
+                    "label": "Website of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.3.7": {
+                    "title": "Brief description of organization",
+                    "label": "Please provide brief description of organization.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.3.8": {
+                    "title": "Experience with carbon markets",
+                    "label": "Describe experience related to the carbon markets.",
+                    "text": "__USER_INPUT__"
+                },
+                "2.3.9": {
+                    "title": "Experience with this project type",
+                    "label": "Describe experience related to the proposed activity.",
+                    "text": "__USER_INPUT__"
+                }
+            },
+            "2.4": {
+                "title": "Project Participant(s) details",
+                "dynamic_table": {
+                    "title": "Project Participant(s) details",
+                    "columns": [
+                        {
+                            "title": "Project role",
+                            "label": "Please specify and explain.",
+                            "radios": [
+                                {
+                                    "title": "Project coordinator"
+                                },
+                                {
+                                    "title": "Sponsor"
+                                },
+                                {
+                                    "title": "Technical advisor"
+                                },
+                                {
+                                    "title": "Technology provider"
+                                },
+                                {
+                                    "title": "Implementation partner"
+                                },
+                                {
+                                    "title": "Intermediary"
+                                },
+                                {
+                                    "title": "Designated Operational Entity under the CDM"
+                                },
+                                {
+                                    "title": "Validator / Verifier"
+                                },
+                                {
+                                    "title": "Other (please specify)",
+                                    "textarea": "__USER_INPUT__"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Primary contact name and title",
+                            "label": "Name and title of the representative.",
+                            "field": "__USER_INPUT__"
+                        },
+                        {
+                            "title": "Company",
+                            "label": "Name of organization.",
+                            "field": "__USER_INPUT__"
+                        },
+                        {
+                            "title": "Address",
+                            "label": "Address of organization.",
+                            "field": "__USER_INPUT__"
+                        },
+                        {
+                            "title": "Phone",
+                            "label": "Phone of organization.",
+                            "field": "__USER_INPUT__"
+                        },
+                        {
+                            "title": "Email",
+                            "label": "E-mail of organization.",
+                            "field": "__USER_INPUT__"
+                        },
+                        {
+                            "title": "Website",
+                            "label": "Please include the website of your organization.",
+                            "field": "__USER_INPUT__"
+                        },
+                        {
+                            "title": "Brief description of organization",
+                            "label": "Please provide brief description of organization.",
+                            "textarea": "__USER_INPUT__"
+                        },
+                        {
+                            "title": "Experience with carbon markets",
+                            "label": "Describe experience related to the carbon markets.",
+                            "textarea": "__USER_INPUT__"
+                        },
+                        {
+                            "title": "Experience with this project type",
+                            "label": "Describe experience related to the proposed activity.",
+                            "textarea": "__USER_INPUT__"
+                        }
+                    ]
+                }
+            },
+            "2.6": {
+                "title": "Expected timeline",
+                "2.6.1": {
+                    "title": "Current status of the project.",
+                    "dropdown": [
+                        {
+                            "title": "Idea"
+                        },
+                        {
+                            "title": "Feasibility study"
+                        },
+                        {
+                            "title": "Business plan"
+                        },
+                        {
+                            "title": "Fundraising"
+                        },
+                        {
+                            "title": "Implementation"
+                        },
+                        {
+                            "title": "Operation"
+                        }
+                    ]
+                },
+                "2.6.2": {
+                    "title": "Expected project start date.",
+                    "date": "__USER_INPUT__"
+                },
+                "2.6.3": {
+                    "title": "Expected first year of offset delivery.",
+                    "date": "__USER_INPUT__"
+                },
+                "2.6.4": {
+                    "title": "Expected project end date.",
+                    "date": "__USER_INPUT__"
+                }
+            }
+        },
+        "GHG emissions": {
+            "title": "Expected greenhouse gas emission reductions",
+            "3.1": {
+                "title": "Project Scale",
+                "label": "Specify the total estimated GHG abated (in metric tons of CO2-equivalent).",
+                "field": "__USER_INPUT__"
+            },
+            "3.2": {
+                "title": "Summary description of how the Project is expected to generate GHG Reductions",
+                "label": "Provide a summary description of how the Project is expected to generate GHG Reductions.",
+                "note": "Please use the following structure: The Project is reducing GHG emissions through improved forest management of the project area forest, increasing protected buffers around waterways, protecting sensitive habitats, and lowering the overall annual allowable harvest of the project area.",
+                "textarea": "__USER_INPUT__"
+            },
+            "3.3": {
+                "title": "How did you calculate your GHG Reductions?",
+                "note": "Example: For an agricultural project, you would identify potential sources of emissions (i.e. carbon dioxide emissions from fossil fuel combustion and nitrous oxide emissions from nitrogen fertilizers) and calculate them by using the equations of the chosen methodology.",
+                "textarea": "__USER_INPUT__"
+            },
+            "3.4": {
+                "title": "Baseline scenario",
+                "label": "Provide a summary description of the probably and realistic baseline scenario.",
+                "note": "Example: For an agricultural project, a baseline scenario would include the description of the existing farming practices. These can include the documented use of fertilizers, practices of cover crop, irrigation system and crop residue management over a period of time.",
+                "textarea": "__USER_INPUT__"
+            },
+            "3.5": {
+                "title": "Additionality",
+                "label": "Describe how this project is 'Additional' would not have happened if not for offsets. In other words, you have to prove that the project wouldn’t have happened if it hadn’t received any carbon financing.",
+                "textarea": "__USER_INPUT__"
+            },
+            "3.6": {
+                "title": "Monitoring",
+                "label": "Provide a summary description of the key measurement and monitoring data required and how you will collect it. Give a description of measurement methods and procedures applied, frequency of data collection, equipment used etc.",
+                "textarea": "__USER_INPUT__"
+            }
+        },
+        "Co-benefits": {
+            "title": "Environment, economic and social co-benefits",
+            "4.1": {
+                "title": "Planet",
+                "label": "Add your goals and describe how you plan to achieve it and measure results."
+            }
+        }
+    }
+}
