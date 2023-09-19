@@ -1,0 +1,35 @@
+{
+  "Registration": {
+    "title": "Verify your carbon details and attach essential documents",
+    "subheading": "Make sure all your details are correct — you can’t change them after you submit your carbon for review.",
+    "heading": "Registration",
+    "label": "This PDD must be registered to the entity raising funds for this project, and in their name.",
+    "sub_label": "Crediting period",
+    "fields": [
+      {
+        "label": "Start",
+        "date": "__USER_INPUT__"
+      },
+      {
+        "label": "End",
+        "date": "__USER_INPUT__"
+      },
+      {
+        "label": "Total carbon amount to be issued",
+        "date": "__USER_INPUT__"
+      },
+      {
+        "label": "Registration date",
+        "date": "__USER_INPUT__"
+      },
+      {
+        "label": "Proof of registration",
+        "file": "__USER_INPUT__"
+      },
+      {
+        "label": "Registry URL",
+        "text": "__USER_INPUT__"
+      }
+    ]
+  }
+}

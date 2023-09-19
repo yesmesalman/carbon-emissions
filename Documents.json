@@ -1,0 +1,20 @@
+{
+  "Documents": {
+    "title": "Upload and verify your documents",
+    "label": "Here you can share and verify important documents related to your project and company.",
+    "sections": [
+      {
+        "title": "Project documents",
+        "dynamic_table": {
+          "file": "__USER_INPUT__"
+        }
+      },
+      {
+        "title": "Company documents",
+        "dynamic_table": {
+          "file": "__USER_INPUT__"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "Overview": {
+    "title": "Introduce your project",
+    "subtitle": "Gain trust by describing your project in a structured way and making it visible for stakeholders.",
+    "sections": [
+      {
+        "heading": "Basic information",
+        "subheading": "Write a clear, brief title and subtitle to help investors quickly understand your project.",
+        "fields": [
+          {
+            "label": "Project name",
+            "placeholder": "Water and Climate VPA",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Project categories",
+            "multiselect": [
+              {
+                "title": "Energy"
+              },
+              {
+                "title": "Energy Efficiency"
+              },
+              {
+                "title": "Manufacturing"
+              },
+              {
+                "title": "Construction"
+              },
+              {
+                "title": "Transport"
+              },
+              {
+                "title": "Mining"
+              },
+              {
+                "title": "Metallurgy"
+              },
+              {
+                "title": "Industrial gases"
+              },
+              {
+                "title": "Chemical industry"
+              },
+              {
+                "title": "Waste"
+              },
+              {
+                "title": "Agriculture"
+              },
+              {
+                "title": "Forestry"
+              },
+              {
+                "title": "Carbon capture and storage"
+              },
+              {
+                "title": "Other"
+              }
+            ]
+          },
+          {
+            "label": "Brief description",
+            "placeholder": "Briefly describe your project.",
+            "textarea": "__USER_INPUT__"
+          }
+        ]
+      },
+      {
+        "heading": "Project image",
+        "subheading": "Add an image that will visually present your project on the platform.",
+        "file": "__USER_INPUT__"
+      },
+      {
+        "heading": "Project location",
+        "subheading": "Enter project location details to raise transparency, receive risk and impact insights.",
+        "fields": [
+          {
+            "label": "Address",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Country",
+            "dropdown": []
+          }
+        ]
+      },
+      {
+        "subheading": "Geographical coordinates",
+        "fields": [
+          {
+            "label": "Latitude",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Longitude",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "field": "__MAP__"
+          }
+        ]
+      },
+      {
+        "heading": "Project overview",
+        "subheading": "Tell us more about your project, what it consists of, what challenge it solves and how.",
+        "fields": [
+          {
+            "label": "Challenge",
+            "placeholder": "Provide a summary description of how the Project is expected to generate GHG Reductions.",
+            "textarea": "__USER_INPUT__"
+          },
+          {
+            "label": "Solution",
+            "placeholder": "Please specify and explain the type of technology used in the Project. This may include: transfer of technology, history of this technology in the region/country/ area, experience in operating this technology, etc.",
+            "textarea": "__USER_INPUT__"
+          },
+          {
+            "label": "Team",
+            "placeholder": "Please provide brief description of organization.",
+            "textarea": "__USER_INPUT__"
+          },
+          {
+            "label": "Project details",
+            "placeholder": "Provide a comprehensive project overview. You may use the following structure",
+            "textarea": "__USER_INPUT__"
+          }
+        ]
+      },
+      {
+        "heading": "Company info",
+        "subheading": "Main information",
+        "fields": [
+          {
+            "label": "Headquarters address",
+            "placeholder": "Address of organization.",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Registration number",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Year established",
+            "dropdown": []
+          },
+          {
+            "label": "Number of employees",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "About",
+            "placeholder": "Please include the website of your organization.",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Email",
+            "placeholder": "E-mail of organization.",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Phone",
+            "placeholder": "Phone of organization.",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Twitter",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "LinkedIn",
+            "field": "__USER_INPUT__"
+          },
+          {
+            "label": "Facebook",
+            "field": "__USER_INPUT__"
+          }
+        ]
+      }
+    ]
+  }
+}
