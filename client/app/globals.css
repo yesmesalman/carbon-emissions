@@ -1,0 +1,20 @@
+:root {
+  --carbon-black-color: #000000cf;
+  --carbon-white-color: #F6F4F0;
+  --carbon-primary-color: #845DC1;
+  --carbon-secondary-color: #9D79C9;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: var(--carbon-white-color);
+  color: var(--carbon-black-color);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
