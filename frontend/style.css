@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuggles&family=Mooli&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: rgb(113, 19, 193);
+    --secondary-color: rgb(137, 65, 201);
+    --text-color: gray;
+    --bg-color:rgb(33, 61, 75);
+}
+.nav-bar{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    margin-left: 20px;
+}
+.logo > img{
+    height: 80px;
+    width: 100px;
+    padding: 8px;
+}
+.primary_btn{
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px;
+    padding: 4px 25px;
+    margin-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.primary_btn:hover{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    transition: 1s ease;
+}
+/* navbar end */
+/* register form */
+.container-fluid{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+}
+.register_box{
+    height: 80%;
+    width: 30%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 90%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+.Signup{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+.paragraph{
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 15px;
+}
+.input_box{
+    display: flex;
+    width: 100%;
+    border: 1px solid gray;
+    margin-top: 10px;
+    align-items: center;
+    border-radius: 3px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.input_box > i{ 
+    color: var(--text-color);
+    font-size: 13px;
+    padding: 10px;
+
+}
+.input_box > input{ 
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    padding: 2px 5px;
+}
+.radio_btn_box{
+    display: flex;
+    margin-top: 10px;
+}
+.radio_btn_box > p{
+    font-size: 13px;
+    position: relative;
+    top: 0px;
+}
+.radio_btn_box > p span{
+    color: var(--primary-color);
+    font-weight: bolder;
+}
+.radio_btn_box > input{
+    position: relative;
+    top: -17px;
+    margin: 5px;
+}
+.radio_btn_box >input[type=checkbox] {
+    accent-color: var(--primary-color);
+  }
+.btn_box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.btn_box > button{
+    border: 1px solid black;
+    font-size: 13px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    color: black;
+    margin: 10px;
+}
+.btn_box > button > i{
+    padding: 0px 4px;
+}
+.register_login{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    font-size: 14px;
+}
+.register_login > a{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+/* media query for responsive */
+@media (max-width: 575px) {
+    .register_box {
+      width: 90%;
+      height: 60%;
+    }
+  }
+/* @media (max-width: 768px) {
+    .register_box{
+        width: 70%;
+        height: 50%;
+    }
+} */
+@media (max-width: 992px) { 
+    .register_box{
+        width: 75%;
+        height: 75%;
+    }   
+    }
+@media (max-width: 1200px) {
+    .register_box{
+        width: 82%;
+    height: 77%;
+    }
+    .radio_btn_box > input{
+        top: -9px;
+    }
+    .btn_box{
+        display: block;
+    }
+}
+@media (min-width: 1400px) {
+
+}
