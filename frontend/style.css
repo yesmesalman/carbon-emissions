@@ -64,13 +64,13 @@
     /* background-color: aqua; */
 }
 .Signup{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bolder;
     margin-top: 20px;
 }
 .paragraph{
     font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 15px;
 }
 .input_box{
@@ -91,6 +91,7 @@
 .input_box > input{ 
     outline: none;
     border: none;
+    font-size: 13px;
     background-color: transparent;
     font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
