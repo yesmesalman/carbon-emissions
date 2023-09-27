@@ -79,7 +79,7 @@
     border: 1px solid gray;
     margin-top: 10px;
     align-items: center;
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .input_box > i{ 
@@ -144,38 +144,59 @@
     color: var(--primary-color);
     font-weight: bolder;
 }
+/* login form style */
+.login_box{
+    height: 55%;
+    width: 30%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn_box_login{
+    display: flex;
+    justify-content: center;
+}
 
 
 
 
 
 
-
-
-
-
-/* media query for responsive */
-@media (max-width: 575px) {
-    .register_box {
-      width: 90%;
-      height: 60%;
-    }
-  }
-/* @media (max-width: 768px) {
-    .register_box{
-        width: 70%;
-        height: 50%;
-    }
-} */
-@media (max-width: 992px) { 
-    .register_box{
-        width: 75%;
-        height: 75%;
-    }   
-    }
-@media (max-width: 1200px) {
+@media (max-width: 576px) {
     .register_box{
         width: 82%;
+    height: 77%;
+    }
+}
+
+@media (min-width: 576px) {
+    .register_box{
+        width: 82%;
+    height: 77%;
+    }
+    .login_box {
+        width: 40%;
+        height: 50%;
+      }
+}
+@media (max-width: 768px) {
+    .login_box {
+        width: 90%;
+        height: 50%;
+      }
+}
+@media (min-width: 992px) {
+    .login_box {
+        width: 60%;
+        height: 50%;
+      }
+}
+@media (min-width: 1200px) {
+    .register_box{
+        width: 43%;
     height: 77%;
     }
     .radio_btn_box > input{
@@ -184,7 +205,15 @@
     .btn_box{
         display: block;
     }
+    .login_box {
+        width: 30%;
+        height: 50%;
+      }
+
 }
 @media (min-width: 1400px) {
-
+    .login_box {
+        width: 60%;
+        height: 50%;
+      }
 }
