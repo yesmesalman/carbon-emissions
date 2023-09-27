@@ -103,7 +103,7 @@
 .radio_btn_box > p{
     font-size: 13px;
     position: relative;
-    top: 0px;
+    top: 7px;
 }
 .radio_btn_box > p span{
     color: var(--primary-color);
@@ -165,6 +165,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query css */
 @media (max-width: 576px) {
     .register_box{
         width: 82%;
@@ -174,29 +195,41 @@
 
 @media (min-width: 576px) {
     .register_box{
-        width: 82%;
+        width: 60%;
     height: 77%;
     }
     .login_box {
         width: 40%;
         height: 50%;
       }
+      .radio_btn_box > input{
+        top: 0px;
+    }
 }
 @media (max-width: 768px) {
     .login_box {
         width: 90%;
         height: 50%;
       }
+      .radio_btn_box > input{
+        top: -7px;
+    }
+    .btn_box{
+        display: block;
+    }
 }
 @media (min-width: 992px) {
     .login_box {
         width: 60%;
         height: 50%;
       }
+      .btn_box{
+        display: block;
+    }
 }
 @media (min-width: 1200px) {
     .register_box{
-        width: 43%;
+        width: 30%;
     height: 77%;
     }
     .radio_btn_box > input{
