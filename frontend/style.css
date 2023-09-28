@@ -17,9 +17,9 @@
     justify-content: space-between;
     align-items: center;
 }
-.logo{
+/* .logo{
     margin-left: 20px;
-}
+} */
 .logo > img{
     height: 80px;
     width: 100px;
@@ -43,10 +43,12 @@
 /* register form */
 .container-fluid{
     height: 90vh;
+}
+.bg-container{
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-color);
 }
 .register_box{
     height: 80%;
@@ -160,17 +162,92 @@
     display: flex;
     justify-content: center;
 }
+/* logout file style*/
+.logout_btn{
+    display: flex;
+    align-items: center;
+}
+.logout_btn > .profile{
+    margin-right: 20px;
+    background-color: rgb(177, 177, 177);
+    border-radius: 50%;
+}
+.logout_btn > .profile > i{
+    margin: 6px 7px;
+    font-size: 13px;
+    color: var(--primary-color);
+}
+.logout_btn > .profile > i:hover{
+    cursor: pointer;
+    transform: rotate(360deg);
+}
+.main_btn{
+    border: 1px solid black;
+    padding: 4px 14px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+.main_btn:hover{
+    cursor: pointer;
+}
+.logout_content{
+    display: flex;
+}
+.side-nav{
+    width: 70px;
+    background-color: rgba(245, 245, 245, 0.733);
+    height: 90vh;
+}
+.content{
+    width: 95%;
+    height: 100%;
+}
+.content > h2{
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-top: 33px;
+}
+.profile_list{
+    border: 1px solid gray;
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    top: 60px;
+    right: 130px;
+    z-index: 10;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+    display: none;
+}
+.logout_btn > .profile > i:hover +.profile_list{
+    display: block;
+}
+.profile_list ul{
+    list-style: none;
+    text-align: start;
+    padding: 2px 8px;
 
+}
+.profile_list ul li{
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    transition: 0.2s;
+}
+.profile_list ul li:hover{
+    border-left: 4px solid var(--primary-color);
+}
+.profile_list ul li i{
+    padding: 0px;
+}
+.profile_list ul .first_list{
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 4px;
 
-
-
-
-
-
-
-
-
-
+}
 
 
 
