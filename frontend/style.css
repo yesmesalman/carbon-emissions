@@ -10,20 +10,29 @@
     --text-color: gray;
     --bg-color:rgb(33, 61, 75);
 }
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
 .nav-bar{
-    width: 100%;
+    width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-/* .logo{
-    margin-left: 20px;
-} */
+.logo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
 .logo > img{
-    height: 80px;
-    width: 100px;
-    padding: 8px;
+    height: 60px;
+    width: 80px;
+    /* padding: 8px; */
+    margin: 0 auto;
 }
 .primary_btn{
     border: none;
@@ -31,7 +40,7 @@
     color: white;
     border-radius: 10px;
     padding: 4px 25px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     font-family: 'Montserrat', sans-serif;
 }
 .primary_btn:hover{
@@ -163,91 +172,116 @@
     justify-content: center;
 }
 /* logout file style*/
-.logout_btn{
-    display: flex;
-    align-items: center;
-}
-.logout_btn > .profile{
-    margin-right: 20px;
-    background-color: rgb(177, 177, 177);
-    border-radius: 50%;
-}
-.logout_btn > .profile > i{
-    margin: 6px 7px;
-    font-size: 13px;
-    color: var(--primary-color);
-}
-.logout_btn > .profile > i:hover{
-    cursor: pointer;
-    transform: rotate(360deg);
-}
-.main_btn{
-    border: 1px solid black;
-    padding: 4px 14px;
-    border-radius: 5px;
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
-}
-.main_btn:hover{
-    cursor: pointer;
-}
-.logout_content{
+.logout-section{
+    height: 100vh;
+    width: 100vw;
     display: flex;
 }
 .side-nav{
-    width: 70px;
-    background-color: rgba(245, 245, 245, 0.733);
-    height: 90vh;
+    width: 50px;
+    height: 100%;
+    background-color: aliceblue;
 }
-.content{
-    width: 95%;
+.logout-layout{
+    width: 94vw;
     height: 100%;
 }
-.content > h2{
-    font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin-top: 33px;
-}
-.profile_list{
-    border: 1px solid gray;
-    position: absolute;
-    font-family: 'Montserrat', sans-serif;
-    top: 60px;
-    right: 130px;
-    z-index: 10;
-    border-radius: 2px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    background-color: white;
-    display: none;
-}
-.logout_btn > .profile > i:hover +.profile_list{
-    display: block;
-}
-.profile_list ul{
-    list-style: none;
-    text-align: start;
-    padding: 2px 8px;
+.logout-navbar{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-bottom: 1px solid black;
 
 }
-.profile_list ul li{
-    font-size: 16px;
-    padding: 5px 10px;
-    margin-top: 5px;
-    transition: 0.2s;
-}
-.profile_list ul li:hover{
-    border-left: 4px solid var(--primary-color);
-}
-.profile_list ul li i{
-    padding: 0px;
-}
-.profile_list ul .first_list{
+.profile-btn{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
     color: white;
-    background-color: var(--primary-color);
-    border-radius: 4px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 12px;
 }
+.logout-btn{
+    background-color: var(--primary-color);
+    color: white;
+    border: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    border-radius: 5px;
+    padding: 4px 14px;
+}
+.logout-btn:hover{
+    background-color: var(--secondary-color);
+}
+.logout-content{
+    width: 94%;
+    height: 90vh;
+}
+.logout-content > h3{
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 10px;
+    font-size: 13px;
+    font-weight: bolder;
+    padding-left: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -269,6 +303,7 @@
         width: 82%;
     height: 77%;
     }
+
 }
 
 @media (min-width: 576px) {
@@ -295,6 +330,7 @@
     .btn_box{
         display: block;
     }
+    
 }
 @media (min-width: 992px) {
     .login_box {
