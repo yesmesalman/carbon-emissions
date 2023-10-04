@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow-x: scroll; */
 }
 :root {
     --primary-color: rgb(113, 19, 193);
@@ -222,19 +223,54 @@ body{
 .logout-content{
     width: 94%;
     height: 90vh;
+    /* margin-left: 10px; */
 }
 .logout-content > h3{
     color: var(--text-color);
     font-family: 'Montserrat', sans-serif;
     padding-top: 10px;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: bolder;
     padding-left: 4px;
 }
-
-
-
-
+.flex-img{
+    width: 100%;
+    height: 10vh;
+    margin-top: 10px;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.flex-img::-webkit-scrollbar {
+    display: none;
+  }
+.flex-img > img{
+    flex: 1;
+    padding: 5px;
+}
+.logout-card{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.logout-card > .card{
+    margin-left: 20px;
+    border-radius: 10px;
+}
+.user-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    background-color: rgb(193, 127, 255);
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    top: 110px;
+}
 
 
 
@@ -303,6 +339,14 @@ body{
         width: 82%;
     height: 77%;
     }
+    .logout-card{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .logout-card > .card{
+        margin-top: 20px;
+    }
 
 }
 
@@ -329,6 +373,13 @@ body{
     }
     .btn_box{
         display: block;
+    }
+    .logout-card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .logout-card > card{
+        margin-top: 120px;
     }
     
 }
