@@ -1,14 +1,15 @@
-import { ApiResponse } from "../helpers";
-import excuteQuery from "../helpers/db";
+import { ApiResponse } from "@/helpers";
+import { NextResponse } from "next/server";
+import db from "./../../..//helpers/db"
 
 export async function GET() {
   try {
-    const result = await excuteQuery({
-      query: "SELECT * FROM users",
-      values: [],
-    });
-    return ApiResponse(true, "", result);
+
+    const users = await db.user.findMany();
+
+    console.log("users", users)
+    return ApiResponse(true, "message", users);
   } catch (error) {
-    return ApiResponse(false, error, []);
+    return ApiResponse(false, "catch", []);
   }
 }
