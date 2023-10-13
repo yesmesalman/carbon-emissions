@@ -9,8 +9,22 @@ datasource db {
 
 model User {
   id        Int      @id @default(autoincrement())
+  name      String
   username  String   @unique
   email     String   @unique
   password  String
-  createdAt DateTime @default(now()) @map("datetime")
+  role_id   Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("users")
+}
+
+model UserRole {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("user_roles")
 }

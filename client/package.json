@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "node seeders/index.mjs"
   },
   "dependencies": {
     "@types/node": "20.6.3",
@@ -23,8 +24,8 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@prisma/client": "^5.4.1",
-    "prisma": "^5.4.1",
+    "@prisma/client": "5.4.2",
+    "prisma": "5.4.2",
     "typescript": "^5.2.2"
   }
 }
