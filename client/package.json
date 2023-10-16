@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "node seeders/index.mjs"
   },
   "dependencies": {
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
+    "dotenv": "^16.3.1",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.2",
     "mysql2": "^3.6.1",
@@ -19,11 +21,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
-    "sequelize": "^6.33.0",
-    "typescript": "5.2.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.6.1"
+    "@prisma/client": "5.4.2",
+    "prisma": "5.4.2",
+    "typescript": "^5.2.2"
   }
 }

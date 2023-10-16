@@ -1,0 +1,181 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  username  String   @unique
+  email     String   @unique
+  password  String
+  role_id   Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("users")
+}
+
+model UserRole {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("user_roles")
+}
+
+model SectoralScopesAndProjectType {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("sectoral_scopes_and_project_types")
+}
+
+model SectoralScopesAndProjectTypeOption {
+  id                                  Int      @id @default(autoincrement())
+  name                                String
+  sectoral_scopes_and_project_type_id Int
+  parent_id                           Int?
+  createdAt                           DateTime @default(now())
+  updatedAt                           DateTime @default(now())
+
+  @@map("sectoral_scopes_and_project_type_options")
+}
+
+model CarbonStandard {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("carbon_standards")
+}
+
+model Methodology {
+  id        Int      @id @default(autoincrement())
+  name      String
+  link      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("methodologies")
+}
+
+model ExistingMethodology {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("existing_methodologies")
+}
+
+model Scale {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("scales")
+}
+
+model ProjectOverview {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("project_overviews")
+}
+
+model FinanceSource {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("finance_sources")
+}
+
+model RiskType {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("risk_types")
+}
+
+model ParticipantType {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("participant_types")
+}
+
+model Timeline {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("timelines")
+}
+
+model DevelopmentGoal {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("development_goals")
+}
+
+model DevelopmentGoalTarget {
+  id                  Int      @id @default(autoincrement())
+  name                String   @db.VarChar(800)
+  development_goal_id Int
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @default(now())
+
+  @@map("development_goal_target")
+}
+
+model Indicator {
+  id                         Int      @id @default(autoincrement())
+  name                       String   @db.VarChar(500)
+  description                String?  @db.Text
+  category                   String?  @db.Text
+  development_goal_target_id Int
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @default(now())
+
+  @@map("indicators")
+}
+
+model KeyMeasurement {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("key_measurements")
+}
+
+model ProjectCategory {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("project_categories")
+}
