@@ -1,0 +1,12 @@
+.breadcrumb_text {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.breadcrumb_text > a {
+  color: var(--carbon-black-light-color);
+}
+
+.breadcrumb_text > a.active {
+  color: var(--carbon-black-color);
+}

@@ -1,8 +1,17 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 :root {
   --carbon-black-color: #000000cf;
   --carbon-white-color: #f4f4f4;
   --carbon-primary-color: #845dc1;
   --carbon-secondary-color: #9d79c9;
+  --carbon-primary-light-color: #f6f0ff;
+  --carbon-black-light-color: #696969ba;
+}
+
+.nav {
+  --bs-nav-link-padding-x: 1.5rem;
+  --bs-nav-link-padding-y: 0.9rem;
 }
 
 html,
@@ -30,4 +39,65 @@ a {
 
 .ml-2 {
   margin-left: 2px;
+}
+
+.page-center {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  font-size: 14px;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: var(--carbon-primary-color) !important;
+  border-color: var(--carbon-primary-color) !important;
+}
+
+/* .btn-outline-primary {
+  border-color: var(--carbon-primary-color) !important;
+  color: var(--carbon-primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--carbon-primary-color) !important;
+  color: var(--carbon-white-color) !important;
+} */
+
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  box-shadow: 4px 1px 15px -14px var(--carbon- -color);
+  -webkit-box-shadow: 4px 1px 15px -14px var(--carbon-black-color);
+  -moz-box-shadow: 4px 1px 15px -14px var(--carbon-black-color);
+  margin-top: -60px;
+  padding: 0px !important;
+}
+
+.bg-light {
+  background-color: var(--carbon-white-color) !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--carbon-primary-color);
+}
+
+.nav-pills .nav-link {
+  border-radius: 0px;
+}
+
+.nav-link > span {
+  padding-left: 4px;
+  font-size: 14px;
+}
+
+.mt-10 {
+  margin-top: 6rem !important;
 }

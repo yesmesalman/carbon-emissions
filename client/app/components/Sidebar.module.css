@@ -1,0 +1,10 @@
+.closeContainer {
+  height: 60px;
+  width: 100%;
+  padding: 0px 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--carbon-white-color);
+}

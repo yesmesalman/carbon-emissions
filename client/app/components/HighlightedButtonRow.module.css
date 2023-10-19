@@ -1,0 +1,15 @@
+.row {
+  border: 1px solid var(--carbon-primary-color);
+  background-color: var(--carbon-primary-light-color);
+  padding: 10px;
+  padding-left: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: var(--carbon-primary-color);
+}

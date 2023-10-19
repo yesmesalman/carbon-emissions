@@ -1,9 +1,7 @@
+import LoginPage from "./login/page"
+
 const HomePage = () => {
-  return (
-    <>
-      <h1>Welcome to the CE</h1>
-    </>
-  );
+  return <LoginPage />;
 };
 
 export default HomePage;

@@ -1,7 +1,6 @@
 import { Poppins } from 'next/font/google'
 import './globals.css'
 import type { Metadata } from 'next'
-import Header from './components/Header'
 
 const poppins = Poppins({
   weight: ['400', '700'],
@@ -19,10 +18,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html>
       <body className={poppins.className}>
-        <Header />
-        <main className='container'>{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   )
