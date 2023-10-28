@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HighlightedButtonRow from "../components/HighlightedButtonRow";
+import axios from "axios";
 
 const DashboardPage = () => {
   const [projects, setProjects] = useState([
@@ -30,6 +31,26 @@ const DashboardPage = () => {
       description: "This is a dummy card.",
     },
   ]);
+
+  // const getData = () => {
+  //   axios({
+  //     method: "post",
+  //     url: "/api/auth/login",
+  //     data: {
+  //       email: "salman@yahoo.com",
+  //       password: "password1",
+  //     },
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   }).then((res) => {
+  //     console.log(res);
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div className="container pt-4 pb-5">

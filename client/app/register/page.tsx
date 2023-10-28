@@ -9,6 +9,59 @@ const RegisterPage = () => {
     router.push("/dashboard");
   };
 
+  const navigateToLogin = () => {
+    router.push("/login");
+  };
+
+  return (
+    <div className="page-center">
+      <div className="shadow p-3 mb-5 bg-white rounded p-5 d-flex flex-column justify-conent-center align-items-center w-25">
+        <h3 className="mb-5">Create an account</h3>
+        <form className="w-100 d-flex flex-column justify-conent-center align-items-center">
+          <div className="w-100 form-group mb-3">
+            <label className="mb-2" htmlFor="name">
+              Full Name
+            </label>
+            <input type="text" className="form-control" id="name" />
+          </div>
+          <div className="w-100 form-group mb-3">
+            <label className="mb-2" htmlFor="username">
+              Username
+            </label>
+            <input type="text" className="form-control" id="username" />
+          </div>
+          <div className="w-100 form-group mb-3">
+            <label className="mb-2" htmlFor="email">
+              Email
+            </label>
+            <input type="email" className="form-control" id="email" />
+          </div>
+          <div className="w-100 form-group">
+            <label className="mb-2" htmlFor="password">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              placeholder="******"
+            />
+          </div>
+          <button
+            type="button"
+            className="btn btn-primary btn-lg btn-block w-100 mt-3 mb-3"
+            onClick={navigateToDashbboard}
+          >
+            Create 🚀
+          </button>
+          <a className="text-center" href="#!" onClick={navigateToLogin}>
+            Already have an account?
+          </a>
+        </form>
+      </div>
+    </div>
+  );
+
   return (
     <div className="page-center">
       <div className="shadow p-3 mb-5 bg-white rounded p-5 d-flex flex-column justify-conent-center align-items-center w-25">
@@ -51,6 +104,9 @@ const RegisterPage = () => {
           >
             Create 🚀
           </button>
+          <a className="text-center" href="#!" onClick={navigateToLogin}>
+            Already have an account?
+          </a>
         </form>
       </div>
     </div>

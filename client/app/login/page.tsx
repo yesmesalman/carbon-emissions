@@ -9,6 +9,10 @@ const LoginPage = () => {
     router.push("/dashboard");
   };
 
+  const navigateToRegister = () => {
+    router.push("/register");
+  }
+
   return (
     <div className="page-center">
       <div className="shadow p-3 mb-5 bg-white rounded p-5 d-flex flex-column justify-conent-center align-items-center w-25">
@@ -44,7 +48,7 @@ const LoginPage = () => {
           >
             Login Account
           </button>
-          <a className="text-center" href="">
+          <a className="text-center" href="#!" onClick={navigateToRegister}>
             Create an account instead
           </a>
         </form>

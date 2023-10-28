@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
   const router = useRouter();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [currentActivePath, setCurrentActivePath] = useState(window.location.pathname ?? "/dashboard");
 
   useEffect(() => {

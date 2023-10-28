@@ -3,7 +3,7 @@
 :root {
   --carbon-black-color: #000000cf;
   --carbon-white-color: #f4f4f4;
-  --carbon-primary-color: #845dc1;
+  --carbon-primary-color: black;
   --carbon-secondary-color: #9d79c9;
   --carbon-primary-light-color: #f6f0ff;
   --carbon-black-light-color: #696969ba;
@@ -100,4 +100,8 @@ a {
 
 .mt-10 {
   margin-top: 6rem !important;
+}
+
+.text-primary {
+  color: var(--carbon-primary-color) !important;
 }

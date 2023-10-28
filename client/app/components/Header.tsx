@@ -4,12 +4,13 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import { BiSolidUserCircle } from "react-icons/bi";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
-  const [profileDropdown, setProfileDropdown] = useState(false);
+  const router = useRouter();
 
-  const toggleDropdown = () => {
-    setProfileDropdown(!profileDropdown);
+  const goToSettings = () => {
+    router.push("/settings");
   };
 
   return (
@@ -24,7 +25,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="form-inline">
-            <div className={styles.header_btn} onClick={toggleDropdown}>
+            <div className={styles.header_btn} onClick={goToSettings}>
               <BiSolidUserCircle color="white" size="30" />
               <span className="text-white ml-2">Salman Saleem</span>
             </div>

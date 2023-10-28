@@ -16,8 +16,8 @@ async function main() {
         name: "Salman",
         username: "yesmesalman",
         email: "admin@yahoo.com",
-        password: "admin123",
-        role_id: 1,
+        password: process.env.DEFAULT_USER_PASSWORD,
+        role_id: Number(process.env.DEFAULT_USER_ROLE_ID),
       },
     ],
   });
