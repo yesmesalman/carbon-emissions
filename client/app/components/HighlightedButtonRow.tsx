@@ -7,12 +7,12 @@ type HighlightedButtonRowProp = {
 };
 
 const HighlightedButtonRow = (props: HighlightedButtonRowProp) => {
-  const { title, buttonText } = props;
+  const { title, buttonText, onButtonPress } = props;
   return (
-    <div className="container">
+    <div>
       <div className={styles.row}>
         <span className={styles.title}>{title}</span>
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-primary" onClick={onButtonPress}>
           {buttonText}
         </button>
       </div>

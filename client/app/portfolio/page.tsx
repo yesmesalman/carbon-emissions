@@ -39,6 +39,10 @@ const PortfolioPage = () => {
     AuthenticatedScreen(router);
   }, [router]);
 
+  const onPressCreateNewPIN = () => {
+    router.push("/portfolio/create");
+  };
+
   return (
     <div className="container pt-4 pb-5">
       <div className="row mb-2">
@@ -53,7 +57,7 @@ const PortfolioPage = () => {
         <HighlightedButtonRow
           title="Create and share your Project Idea Note"
           buttonText="Create New PIN"
-          onButtonPress={() => {}}
+          onButtonPress={onPressCreateNewPIN}
         />
       </div>
       <div className="row mt-4">

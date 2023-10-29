@@ -17,7 +17,7 @@ const Breadcrumb = (props: BreadcrumbType) => {
   const router = useRouter();
   const { items } = props;
   return (
-    <div className="container">
+    <div>
       <h4 className={styles.breadcrumb_text}>
         {items.map((e, i) => {
           const lastItem = i === items.length - 1;
