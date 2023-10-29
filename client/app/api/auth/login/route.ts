@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
       return ApiResponse(false, "", [], true, [
         {
           field: "password",
-          message: "Please write valid Password",
+          message: "Please write Password",
         },
       ]);
     }

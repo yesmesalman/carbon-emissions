@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Sidebar.module.css";
 import { useRouter } from "next/navigation";
+import { PerformLogout } from "@/helpers";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -17,6 +18,10 @@ const Sidebar = () => {
 
   const goToScreen = (e: string) => {
     router.push(e);
+  };
+
+  const onPressLogout = () => {
+    PerformLogout(router);
   };
 
   return (
@@ -53,6 +58,7 @@ const Sidebar = () => {
         className={`nav-link ${styles.nav_link} link-dark`}
         type="button"
         role="tab"
+        onClick={onPressLogout}
       >
         Logout
       </button>

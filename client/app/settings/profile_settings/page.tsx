@@ -1,10 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import Sidebar from "../../components/Settings/Sidebar";
+import { AuthenticatedScreen } from "@/helpers";
+import { useRouter } from "next/navigation";
 
 const ProfileSettingsPage = () => {
+  const router = useRouter();
+  
+  useEffect(() => {
+    AuthenticatedScreen(router);
+  }, [router]);
+
   return (
     <div className="pt-4 pb-5">
       <Breadcrumb

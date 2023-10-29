@@ -7,11 +7,14 @@ import { HiLogout } from "react-icons/hi";
 import styles from "./Sidebar.module.css";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { PerformLogout } from "@/helpers";
 
 const Sidebar = () => {
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [currentActivePath, setCurrentActivePath] = useState(window.location.pathname ?? "/dashboard");
+  const [currentActivePath, setCurrentActivePath] = useState(
+    window.location.pathname ?? "/dashboard"
+  );
 
   useEffect(() => {
     var currentPathname = window.location.pathname;
@@ -26,6 +29,10 @@ const Sidebar = () => {
   const navigateToPortfolio = () => {
     setCurrentActivePath("/portfolio");
     router.push("/portfolio");
+  };
+
+  const onPressLogout = () => {
+    PerformLogout(router);
   };
 
   return (
@@ -69,7 +76,7 @@ const Sidebar = () => {
             {sidebarOpen && <span>Portfolio</span>}
           </a>
         </li>
-        <li className="user-select-none border-top">
+        <li className="user-select-none border-top" onClick={onPressLogout}>
           <a href="#" className="nav-link link-dark">
             <HiLogout size="24" />
             {sidebarOpen && <span>Logout</span>}

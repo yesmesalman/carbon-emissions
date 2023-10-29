@@ -17,6 +17,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  console.log("asdfasdfa", children)
+
   return (
     <html>
       <body className={poppins.className}>
