@@ -1,12 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AuthenticatedScreen } from "@/helpers";
 import { useRouter } from "next/navigation";
 import Breadcrumb from "@/app/components/Breadcrumb/Breadcrumb";
-import PINNaviagtion from "@/app/components/PIN/PINNavigation";
+import PINNaviagtion, { ProjectTabs } from "@/app/components/PIN/PINNavigation";
 
-const CreatePage = () => {
+type ScreenProps = {
+  children: any;
+  activeTabIndex: number;
+};
+
+const Screen = (props: ScreenProps) => {
+  const { children, activeTabIndex } = props;
   const router = useRouter();
 
   useEffect(() => {
@@ -20,15 +26,16 @@ const CreatePage = () => {
           items={[
             { label: "Dashboard", link: "/dashboard" },
             { label: "Porfolio", link: "/portfolio" },
-            { label: "Project Idea Note", link: "" },
+            { label: "Create new project", link: "" },
           ]}
         />
       </div>
       <div className="row mt-3">
-        <PINNaviagtion activeIndex={3} />
+        <PINNaviagtion activeIndex={activeTabIndex} tabs={ProjectTabs} />
       </div>
+      <div className="row pt-4">{children}</div>
     </div>
   );
 };
 
-export default CreatePage;
+export default Screen;

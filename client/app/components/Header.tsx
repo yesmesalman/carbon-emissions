@@ -3,11 +3,14 @@
 import Link from "next/link";
 import styles from "./Header.module.css";
 import { BiSolidUserCircle } from "react-icons/bi";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { GetLoggedInUser } from "@/helpers";
 
 const Header = () => {
   const router = useRouter();
+  const user = GetLoggedInUser();
+
+  console.log("useruseruseruseruser", user)
 
   const goToSettings = () => {
     router.push("/settings");
@@ -27,7 +30,7 @@ const Header = () => {
           <div className="form-inline">
             <div className={styles.header_btn} onClick={goToSettings}>
               <BiSolidUserCircle color="white" size="30" />
-              <span className="text-white ml-2">Salman Saleem</span>
+              <span className="text-white ml-4">Salman Saleem</span>
             </div>
           </div>
         </nav>

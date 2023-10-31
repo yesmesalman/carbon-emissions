@@ -170,3 +170,9 @@ export function PerformLogout(router: any) {
     return router.push("/login");
   }
 }
+
+export function GetLoggedInUser () {
+  const CONFIG = getFromLocalStorage("CONFIG");
+
+  return CONFIG?.user.user;
+}

@@ -40,7 +40,7 @@ const PortfolioPage = () => {
   }, [router]);
 
   const onPressCreateNewPIN = () => {
-    router.push("/portfolio/create");
+    router.push("/portfolio/project");
   };
 
   return (

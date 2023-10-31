@@ -1,18 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { AuthenticatedScreen } from "@/helpers";
-import { useRouter } from "next/navigation";
 import Breadcrumb from "@/app/components/Breadcrumb/Breadcrumb";
-import PINNaviagtion from "@/app/components/PIN/PINNavigation";
+import PINNaviagtion, { PINTabs } from "@/app/components/PIN/PINNavigation";
 import PINProgress from "@/app/components/PIN/PINProgress";
 
-const CreatePage = () => {
-  const router = useRouter();
+type ScreenProps = {
+  children: any;
+  activeTabIndex: number;
+};
 
-  useEffect(() => {
-    AuthenticatedScreen(router);
-  }, [router]);
+const Screen = (props: ScreenProps) => {
+  const { children, activeTabIndex } = props;
 
   return (
     <div className="container pt-4 pb-5">
@@ -26,18 +24,16 @@ const CreatePage = () => {
         />
       </div>
       <div className="row mt-3">
-        <PINNaviagtion activeIndex={0} />
+        <PINNaviagtion activeIndex={activeTabIndex} tabs={PINTabs} />
       </div>
       <div className="row mt-3">
-        <div className="col-9">
-          <h1>col-9</h1>
-        </div>
+        <div className="col-9">{children}</div>
         <div className="col-3">
-          <PINProgress completed={80} />
+          <PINProgress completed={70} />
         </div>
       </div>
     </div>
   );
 };
 
-export default CreatePage;
+export default Screen;
