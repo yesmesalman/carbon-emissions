@@ -1,0 +1,31 @@
+.select_container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: var(--carbon-white-light-color);
+  box-shadow: 4px 1px 15px -5px var(--carbon- -color);
+  -webkit-box-shadow: 4px 1px 15px -5px var(--carbon-black-color);
+  -moz-box-shadow: 4px 1px 15px -5px var(--carbon-black-color);
+  transition: width 0.1s;
+  z-index: 100;
+}
+
+.select_container_header {
+  height: 60px;
+  width: 100%;
+  cursor: pointer;
+  padding: 16px;
+}
+
+.select_content_container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.select_container_footer {
+  height: 60px;
+  width: 100%;
+  cursor: pointer;
+  padding: 12px;
+}

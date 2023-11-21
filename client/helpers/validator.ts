@@ -2,8 +2,11 @@ import validator from "validator";
 
 export const isEmpty = (e: any) => {
   if (e === undefined) return true;
+  if (e === "") return true;
+  if (e === null) return true;
+  if (e === 0) return true;
 
-  return validator.isEmpty(e);
+  return false;
 };
 
 export const isEmail = (e: any) => {

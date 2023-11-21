@@ -179,3 +179,42 @@ model ProjectCategory {
 
   @@map("project_categories")
 }
+
+model Project {
+  id        Int      @id @default(autoincrement())
+  code      String   @db.VarChar(255)
+  step      Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("projects")
+}
+
+model ProjectPIN {
+  id         Int      @id @default(autoincrement())
+  project_id Int
+  step       Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
+
+  @@map("project_pin")
+}
+
+model PINSummary {
+  id                                         Int      @id @default(autoincrement())
+  pin_id                                     Int
+  owner                                      String   @db.Text()
+  title                                      String   @db.Text()
+  country                                    String   @db.VarChar(10)
+  description                                String   @db.Text()
+  sectoral_scopes_and_project_type_option_id Int
+  technology                                 String   @db.Text()
+  standard_id                                Int
+  methodology                                String   @db.Text()
+  existing_methodology_id                    Int
+  scale_id                                   Int
+  createdAt                                  DateTime @default(now())
+  updatedAt                                  DateTime @default(now())
+
+  @@map("pin_summary")
+}

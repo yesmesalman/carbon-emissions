@@ -11,7 +11,7 @@ import { PerformLogout } from "@/helpers";
 
 const Sidebar = () => {
   const router = useRouter();
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentActivePath, setCurrentActivePath] = useState(
     window.location.pathname ?? "/dashboard"
   );
@@ -38,7 +38,7 @@ const Sidebar = () => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 sidebar"
-      style={{ width: sidebarOpen ? `220px` : `76px` }}
+      style={{ width: sidebarOpen ? `280px` : `76px` }}
     >
       <div
         className={styles.closeContainer}

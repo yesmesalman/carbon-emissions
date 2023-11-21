@@ -1,19 +1,33 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AuthenticatedScreen } from "@/helpers";
+import { AuthenticatedScreen, HttpRequest } from "@/helpers";
 import { useRouter } from "next/navigation";
 import Screen from "../screen";
+import Button from "@/app/components/Form/Button";
 
 const ProjectPage = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     AuthenticatedScreen(router);
   }, [router]);
 
   const onPressNextStep = () => {
-    router.push("/portfolio/project/summary");
+    setLoading(true);
+    const request = HttpRequest("/api/project/create", {});
+
+    request
+      .then((e) => e.json())
+      .then((e) => {
+        if (e.success) {
+          return router.push(
+            `/portfolio/project/summary?project=${e.data.code}`
+          );
+        }
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -25,13 +39,12 @@ const ProjectPage = () => {
         carbon page and share it with your potential project developers.
       </p>
       <div>
-        <button
-          type="button"
+        <Button
           className="btn btn-primary"
           onClick={onPressNextStep}
-        >
-          Next step
-        </button>
+          label="Next Step"
+          loading={loading}
+        />
       </div>
     </Screen>
   );

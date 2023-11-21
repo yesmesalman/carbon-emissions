@@ -2,7 +2,8 @@
 
 :root {
   --carbon-black-color: #000000cf;
-  --carbon-white-color: #f4f4f4;
+  --carbon-white-color: #f9f9f9;
+  --carbon-green-color: #038603;
   --carbon-white-light-color: #ffffff;
   --carbon-primary-color: #6a4a99;
   --carbon-secondary-color: #9d79c9;
@@ -15,6 +16,17 @@
   --bs-nav-link-padding-y: 0.9rem;
   --bs-nav-tabs-link-active-bg: inherit;
   --bs-nav-tabs-link-active-border-color: var(--carbon-white-color);
+}
+
+.alert-primary {
+  --bs-alert-color: var(--carbon-primary-color);
+  --bs-alert-bg: var(--carbon-primary-light-color);
+  --bs-alert-border-color: var(--carbon-primary-light-color);
+  --bs-alert-link-color: var(--carbon-primary-color);
+}
+
+.text-black {
+  color: var(--carbon-black-color) !important;
 }
 
 html,
@@ -40,12 +52,20 @@ a {
   color: var(--carbon-white-color);
 }
 
+.text-green {
+  color: var(--carbon-green-color);
+}
+
 .ml-2 {
   margin-left: 2px;
 }
 
 .ml-4 {
   margin-left: 4px;
+}
+
+.ml-8 {
+  margin-left: 8px;
 }
 
 .page-center {
@@ -67,7 +87,7 @@ a {
   border-color: var(--carbon-primary-color) !important;
 }
 
-/* .btn-outline-primary {
+.btn-outline-primary {
   border-color: var(--carbon-primary-color) !important;
   color: var(--carbon-primary-color) !important;
 }
@@ -75,7 +95,7 @@ a {
 .btn-outline-primary:hover {
   background-color: var(--carbon-primary-color) !important;
   color: var(--carbon-white-color) !important;
-} */
+}
 
 .sidebar {
   height: 100vh;
@@ -131,4 +151,28 @@ a {
 
 .black-light-text {
   color: var(--carbon-black-light-color);
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.form-control {
+  background-color: var(--carbon-white-light-color);
+}
+
+.form-group > label {
+  font-size: 1em;
+  margin-bottom: 4px;
+  color: var(--carbon-black-color);
+}
+
+.form-group > label.warning-text {
+  color: var(--carbon-black-light-color);
+  display: block;
+  font-size: 12px;
+}
+
+.font-size-12 {
+  font-size: 12px;
 }

@@ -114,6 +114,12 @@ export function ShowValidations(errors: ValidationType[]) {
     if (element) {
       element.classList.add("is-invalid");
       element?.parentNode?.insertBefore(newElement, element.nextSibling);
+
+      //scroll to the field
+      window.scrollTo({
+        top: element.offsetTop - 100,
+        behavior: "smooth",
+      });
     }
   });
 }
@@ -123,6 +129,12 @@ export function ShowWarningAlert(message: string) {
   if (element) {
     element.innerHTML = message;
     element.classList.remove("d-none");
+
+    //scroll to the field
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 }
 
@@ -171,8 +183,51 @@ export function PerformLogout(router: any) {
   }
 }
 
-export function GetLoggedInUser () {
+export function GetLoggedInUser() {
   const CONFIG = getFromLocalStorage("CONFIG");
 
   return CONFIG?.user.user;
+}
+
+export function generateRandomString(length: number) {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let randomString = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    randomString += characters.charAt(randomIndex);
+  }
+
+  return randomString;
+}
+
+export function AuthenticatedPINScreen(router: any) {
+  const queryString = window.location.search;
+  const params = new URLSearchParams(queryString);
+  const e = params.get("project");
+  if (!e) {
+    return router.push(`/portfolio/project`);
+  }
+  return e;
+}
+
+export function GetProjectPINScreen() {
+  const queryString = window.location.search;
+  const params = new URLSearchParams(queryString);
+  const e = params.get("project");
+  return e;
+}
+
+export function CheckPINStep(step: number, callback: any) {
+  const request = HttpRequest("/api/project/check-pin-step", {
+    project: GetProjectPINScreen(),
+  });
+  request
+    .then((e) => e.json())
+    .then((e) => {
+      if (e?.data?.project_pin?.step > step) {
+        callback();
+      }
+    });
 }
