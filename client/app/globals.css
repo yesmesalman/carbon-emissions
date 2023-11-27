@@ -9,6 +9,7 @@
   --carbon-secondary-color: #9d79c9;
   --carbon-primary-light-color: #f6f0ff;
   --carbon-black-light-color: #696969ba;
+  --carbon-purple-color: #efeafb;
 }
 
 .nav {
@@ -175,4 +176,22 @@ a {
 
 .font-size-12 {
   font-size: 12px;
+}
+
+.warning-list {
+  list-style-type: square;
+}
+
+.warning-list-item {
+  color: var(--carbon-black-light-color);
+  font-size: 12px;
+}
+
+.form-check-input:checked {
+  background-color: var(--carbon-primary-color);
+  border-color: var(--carbon-primary-color);
+}
+
+.text-white {
+  color: var(--carbon-white-color);
 }

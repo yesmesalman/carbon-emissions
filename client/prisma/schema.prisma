@@ -218,3 +218,75 @@ model PINSummary {
 
   @@map("pin_summary")
 }
+
+model PINDetails {
+  id                                          Int      @id @default(autoincrement())
+  pin_id                                      Int
+  description                                 String   @db.Text()
+  innovation                                  String   @db.Text()
+  funding_status                              String   @db.Text()
+  assumptions                                 String   @db.Text()
+  name                                        String
+  organization                                String   @db.Text()
+  address                                     String
+  phone                                       String
+  email                                       String
+  website                                     String
+  description_of_organization                 String   @db.Text()
+  experience_with_carbon_markets              String   @db.Text()
+  experience_with_this_project_type           String   @db.Text()
+  developer_name                              String
+  developer_organization                      String
+  developer_address                           String
+  developer_phone                             String
+  developer_email                             String
+  developer_website                           String
+  developer_description_of_organization       String   @db.Text()
+  developer_experience_with_carbon_markets    String   @db.Text()
+  developer_experience_with_this_project_type String   @db.Text()
+  current_status_of_project                   String   @db.Text()
+  project_start_date                          String
+  year_offset_delivery                        String
+  project_end_date                            String
+  createdAt                                   DateTime @default(now())
+  updatedAt                                   DateTime @default(now())
+
+  @@map("pin_details")
+}
+
+model PINDetailSourceOfFinance {
+  id                   Int      @id @default(autoincrement())
+  pin_detail_id        Int
+  source_of_finance_id Int
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @default(now())
+
+  @@map("pin_detail_source_of_finances")
+}
+
+model PINDetailRisk {
+  id            Int      @id @default(autoincrement())
+  pin_detail_id Int
+  risk_type_id  Int
+  description   String   @db.Text
+  mitigation    String   @db.Text
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now())
+
+  @@map("pin_detail_risks")
+}
+
+model PINEmission {
+  id                 Int      @id @default(autoincrement())
+  pin_id             Int
+  project_scale      String   @db.Text()
+  description        String   @db.Text()
+  calculation_method String   @db.Text()
+  baseline_scenario  String   @db.Text()
+  additionality      String   @db.Text()
+  monitoring         String   @db.Text()
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @default(now())
+
+  @@map("pin_emissions")
+}

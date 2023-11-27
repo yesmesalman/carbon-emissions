@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   AuthenticatedPINScreen,
   AuthenticatedScreen,
@@ -44,15 +44,17 @@ const SummaryPage = () => {
 
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {}, [router]);
+  const goToNextStep = useCallback(() => {
+    return router.push(
+      `/portfolio/project/details?project=${GetProjectPINScreen()}`
+    );
+  }, [router]);
 
   useEffect(() => {
     AuthenticatedPINScreen(router);
     AuthenticatedScreen(router);
-    CheckPINStep(0, () => {
-      return router.push(`/portfolio/details?project=${GetProjectPINScreen()}`);
-    });
-  }, [router]);
+    CheckPINStep(0, goToNextStep);
+  }, [router, goToNextStep]);
 
   useEffect(() => {
     const getData = () => {
@@ -110,7 +112,7 @@ const SummaryPage = () => {
           return ShowWarningAlert(e?.message);
         }
 
-        console.log("e", e);
+        goToNextStep();
       })
       .catch((e) => {
         return ShowWarningAlert(e?.message);
@@ -122,13 +124,13 @@ const SummaryPage = () => {
 
   return (
     <Screen activeTabIndex={0}>
-      <h3 className="mb-4">Project Summary</h3>
+      <h4 className="mb-2 mt-2 font-bold">1. Project Summary</h4>
       <div className="row">
         <FormAlerts />
       </div>
-      <div className="row ml-2 pb-4">
-        <h5 className="font-bold">1.1 Overview</h5>
-        <div className="row ml-2 pt-4">
+      <div className="row pb-4">
+        <h5>1.1 Overview</h5>
+        <div className="row ml-8 pt-4">
           <div className="form-group mb-5">
             <label>1.1.1 Project Owner *</label>
             <label className="warning-text">

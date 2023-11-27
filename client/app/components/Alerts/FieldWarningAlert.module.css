@@ -1,0 +1,31 @@
+.alert {
+  background-color: var(--carbon-purple-color);
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.text {
+  font-size: 10px;
+  line-height: 12px;
+  margin-bottom: 0px;
+}
+
+.warning_icon {
+  color: var(--carbon-primary-color);
+  font-size: 24px;
+  margin-right: 16px;
+  display: flex;
+  align-items: flex-start;
+  margin-top: -1px;
+}
+
+.close_icon {
+  font-size: 14px;
+  color: var(--carbon-black-light-color);
+  cursor: pointer;
+  margin-left: 15px;
+}
