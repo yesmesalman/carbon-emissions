@@ -1,0 +1,106 @@
+.section {
+  margin-top: 50px;
+}
+
+.section_header {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.section_header .title {
+  font-weight: bold;
+}
+
+.target_pictures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 5px;
+  line-height: 1 !important;
+  margin-left: 10px;
+}
+.section_action_row {
+  margin-top: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section_content {
+  padding-top: 10px;
+}
+
+.section_table_header {
+  height: 30px;
+  background: var(--carbon-black-color);
+  border-radius: 8px 8px 0px 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.section_header_cell {
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.section_header_cell span {
+  color: var(--carbon-white-color);
+  font-size: 10px;
+}
+.section_table_no_content {
+  height: 140px;
+  width: 100%;
+  border: 1px solid var(--carbon-primary-light-color);
+  background-color: var(--carbon-white-light-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section_table {
+  width: 100%;
+  padding-bottom: 16px;
+  background-color: var(--carbon-white-light-color);
+}
+.section_table_row {
+  display: flex;
+  flex-direction: row;
+  min-height: 30px;
+  background-color: var(--carbon-white-light-color);
+  padding: 8px 0px;
+}
+.section_table_cell {
+  display: flex;
+  flex: 1 1;
+  align-items: center;
+  padding: 2px 8px;
+}
+.section_table_cell_indicators {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2px;
+}
+.section_table_cell span {
+  color: var(--carbon-black-color);
+  font-size: 10px;
+  line-height: 12px;
+}
+.section_table_cell_actions {
+  justify-content: flex-end;
+}
+.section_table_cell_actions > div {
+  padding-right: 16px;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

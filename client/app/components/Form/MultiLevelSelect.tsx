@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./MultiLevelSelect.module.css";
-import { AiOutlineClose } from "react-icons/ai";
+import { MdOutlineClose } from "react-icons/md";
 import { HttpRequest } from "@/helpers";
 import Spinner from "../Spinner";
 
@@ -92,7 +92,7 @@ const MultiLevelSelect = (props: SelectProps) => {
           onClick={closeContainer}
           className={`d-flex flex-column justify-content-center ${styles.select_container_header}`}
         >
-          <AiOutlineClose size="28" />
+          <MdOutlineClose size="28" />
         </div>
         <div
           className={`d-flex flex-column p-4 ${styles.select_content_container}`}

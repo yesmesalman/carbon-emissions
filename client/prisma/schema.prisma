@@ -290,3 +290,57 @@ model PINEmission {
 
   @@map("pin_emissions")
 }
+
+model PINBenefit {
+  id                         Int      @id @default(autoincrement())
+  pin_id                     Int
+  section_name               String
+  development_goal_id        Int
+  development_goal_target_id Int
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @default(now())
+
+  @@map("pin_benefits")
+}
+
+model PINBenefitIndicator {
+  id             Int      @id @default(autoincrement())
+  pin_benefit_id Int
+  indicator_id   Int
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @default(now())
+
+  @@map("pin_benefit_indicators")
+}
+
+model PINViability {
+  id                       Int      @id @default(autoincrement())
+  pin_id                   Int
+  leakage                  String   @db.Text()
+  permanence               String   @db.Text()
+  quantifiable             String   @db.Text()
+  data_collection_method   String   @db.Text()
+  ownership                String
+  demonstration_ownership  String
+  recognition              String
+  baseline_scenario        String   @db.Text()
+  baseline_scenario_result String   @db.Text()
+  additionality            String   @db.Text()
+  financial                String   @db.Text()
+  technological            String   @db.Text()
+  social                   String   @db.Text()
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @default(now())
+
+  @@map("pin_viabilities")
+}
+
+model PINViabilityKeyMeasurement {
+  id                 Int      @id @default(autoincrement())
+  pin_viability_id   Int
+  key_measurement_id Int
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @default(now())
+
+  @@map("pin_viability_seasurements")
+}

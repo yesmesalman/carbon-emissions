@@ -3,13 +3,15 @@
 :root {
   --carbon-black-color: #000000cf;
   --carbon-white-color: #f9f9f9;
-  --carbon-green-color: #038603;
+  --carbon-green-color: #28a745;
   --carbon-white-light-color: #ffffff;
-  --carbon-primary-color: #6a4a99;
+  --carbon-primary-color: #6f13c7;
+  /* #6a4a99; */
   --carbon-secondary-color: #9d79c9;
   --carbon-primary-light-color: #f6f0ff;
   --carbon-black-light-color: #696969ba;
   --carbon-purple-color: #efeafb;
+  --carbon-red-color: #dc3545;
 }
 
 .nav {
@@ -28,6 +30,14 @@
 
 .text-black {
   color: var(--carbon-black-color) !important;
+}
+
+.text-red {
+  color: var(--carbon-red-color) !important;
+}
+
+.text-black-light {
+  color: var(--carbon-black-light-color) !important;
 }
 
 html,
@@ -178,6 +188,10 @@ a {
   font-size: 12px;
 }
 
+.font-size-14 {
+  font-size: 14px;
+}
+
 .warning-list {
   list-style-type: square;
 }
@@ -194,4 +208,17 @@ a {
 
 .text-white {
   color: var(--carbon-white-color);
+}
+hr {
+  border-color: var(--carbon-primary-color);
+  opacity: 1;
+  border-width: 2px;
+}
+.badge {
+  border-radius: 8px !important;
+}
+.badge-primary {
+  background-color: var(--carbon-primary-color) !important;
+  color: var(--carbon-white-color) !important;
+  font-weight: 500;
 }
