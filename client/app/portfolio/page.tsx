@@ -11,25 +11,25 @@ const PortfolioPage = () => {
   const [projects, setProjects] = useState([
     {
       id: 1,
-      image: "https://via.placeholder.com/150",
+      image: "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/0f4c8a89-e026-4521-9da9-ee42652f44dc",
       title: "Project name",
       description: "This is a dummy card.",
     },
     {
       id: 2,
-      image: "https://via.placeholder.com/150",
+      image: "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/27899f0e-badb-457c-aaea-111d1965f358.jpeg",
       title: "Project name",
       description: "This is a dummy card.",
     },
     {
       id: 3,
-      image: "https://via.placeholder.com/150",
+      image: "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/2f75fafc-579f-47b5-a320-aa1a21893165.jpeg",
       title: "Project name",
       description: "This is a dummy card.",
     },
     {
       id: 4,
-      image: "https://via.placeholder.com/150",
+      image: "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/35916011-eb02-4b5a-bf4e-7c8322f18204",
       title: "Project name",
       description: "This is a dummy card.",
     },

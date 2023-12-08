@@ -182,6 +182,7 @@ model ProjectCategory {
 
 model Project {
   id        Int      @id @default(autoincrement())
+  user_id   Int
   code      String   @db.VarChar(255)
   step      Int
   createdAt DateTime @default(now())

@@ -68,6 +68,12 @@ export function HttpRequest(url: string, body: object) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
+  const config = getFromLocalStorage("CONFIG");
+
+  if (config?.token) {
+    body.token = config?.token;
+  }
+
   var raw = JSON.stringify(body);
 
   var requestOptions = {

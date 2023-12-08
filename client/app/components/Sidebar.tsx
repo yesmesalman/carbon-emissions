@@ -1,5 +1,4 @@
 "use client";
-import { RiDashboardFill } from "react-icons/ri";
 import { HiMiniSquare2Stack } from "react-icons/hi2";
 import { AiOutlineClose } from "react-icons/ai";
 import { GrTextAlignLeft } from "react-icons/gr";
@@ -8,6 +7,7 @@ import styles from "./Sidebar.module.css";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { PerformLogout } from "@/helpers";
+import { LuLayoutDashboard } from "react-icons/lu";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -61,7 +61,7 @@ const Sidebar = () => {
               currentActivePath === "/dashboard" ? "active" : "link-dark"
             }`}
           >
-            <RiDashboardFill size="22" />
+            <LuLayoutDashboard size="22" />
             {sidebarOpen && <span>Dashboard</span>}
           </a>
         </li>
