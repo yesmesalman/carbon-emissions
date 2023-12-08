@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AuthenticatedScreen } from "@/helpers";
+import { AuthenticatedScreen, HttpRequest } from "@/helpers";
 import Image from "next/image";
 
 const PROJECT_PICTURES = [
@@ -14,10 +14,20 @@ const PROJECT_PICTURES = [
 
 const DashboardPage = () => {
   const router = useRouter();
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     AuthenticatedScreen(router);
   }, [router]);
+
+  useEffect(() => {
+    const getData = () => {
+      const request = HttpRequest("/api/project/get-projects", {});
+      request.then((e) => e.json()).then((e) => setProjects(e?.data));
+    };
+
+    return getData();
+  }, []);
 
   return (
     <div className="container pt-4 pb-5">
@@ -28,21 +38,23 @@ const DashboardPage = () => {
         <h5>Projects</h5>
       </div>
       <div className="row">
-        <div className="col-md-4 mb-3" key={`project`}>
-          <div className="card">
-            <Image
-              src={PROJECT_PICTURES[0]}
-              className="card-img-top"
-              alt="Card Image"
-              width="200"
-              height="200"
-            />
-            <div className="card-body">
-              <h5 className="card-title">asdfasdf</h5>
-              <p className="card-text">asdfasdf</p>
+        {projects.map((p, index) => (
+          <div className="col-md-4 mb-3" key={`project-${index}`}>
+            <div className="card">
+              <Image
+                src={PROJECT_PICTURES[Math.floor(Math.random() * 3)]}
+                className="card-img-top"
+                alt="Card Image"
+                width="200"
+                height="200"
+              />
+              <div className="card-body">
+                <h5 className="card-title">Project Name</h5>
+                <p className="card-text">asdfasdf</p>
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
