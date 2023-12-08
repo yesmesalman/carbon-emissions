@@ -375,6 +375,15 @@ export async function POST(req: NextRequest) {
         data: organizedSourceOfFinances,
       });
 
+    await db.projectPIN.update({
+      where: {
+        id: projectPin.id,
+      },
+      data: {
+        step: 2,
+      },
+    });
+
     return ApiResponse(true, "", {});
   } catch (error) {
     console.log(error);

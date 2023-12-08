@@ -22,6 +22,8 @@ import { ExistingMethodologyProp } from "@/app/api/summary/existing-methodologie
 import Button from "@/app/components/Form/Button";
 import FormAlerts from "@/app/components/Form/FormAlerts";
 
+const PIN_STEP = 0;
+
 const SummaryPage = () => {
   const router = useRouter();
 
@@ -53,7 +55,7 @@ const SummaryPage = () => {
   useEffect(() => {
     AuthenticatedPINScreen(router);
     AuthenticatedScreen(router);
-    CheckPINStep(0, goToNextStep);
+    CheckPINStep(PIN_STEP, goToNextStep);
   }, [router, goToNextStep]);
 
   useEffect(() => {
@@ -123,7 +125,7 @@ const SummaryPage = () => {
   };
 
   return (
-    <Screen activeTabIndex={0}>
+    <Screen activeTabIndex={PIN_STEP}>
       <h4 className="mb-2 mt-2 font-bold">1. Project Summary</h4>
       <div className="row">
         <FormAlerts />

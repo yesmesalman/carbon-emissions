@@ -18,6 +18,8 @@ import FieldWarningAlert from "@/app/components/Alerts/FieldWarningAlert";
 import { KeyMeasurementProp } from "@/app/api/viability/key-measurements/route";
 import Button from "@/app/components/Form/Button";
 
+const PIN_STEP = 4;
+
 const ViabilityPage = () => {
   const router = useRouter();
 
@@ -63,7 +65,7 @@ const ViabilityPage = () => {
   useEffect(() => {
     AuthenticatedPINScreen(router);
     AuthenticatedScreen(router);
-    CheckPINStep(1, goToNextStep);
+    CheckPINStep(PIN_STEP, goToNextStep);
   }, [router, goToNextStep]);
 
   const onKeyMeasurementChange = (e: any) => {
@@ -130,7 +132,7 @@ const ViabilityPage = () => {
   };
 
   return (
-    <Screen activeTabIndex={4}>
+    <Screen activeTabIndex={PIN_STEP}>
       <h4 className="mt-2 font-bold">5. Preliminary assessment of viability</h4>
       <div className="row">
         <FormAlerts />

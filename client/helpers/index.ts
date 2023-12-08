@@ -203,9 +203,7 @@ export function generateRandomString(length: number) {
 }
 
 export function AuthenticatedPINScreen(router: any) {
-  const queryString = window.location.search;
-  const params = new URLSearchParams(queryString);
-  const e = params.get("project");
+  const e = GetProjectPINScreen();
   if (!e) {
     return router.push(`/portfolio/project`);
   }

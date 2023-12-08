@@ -18,6 +18,8 @@ import { FinanceSourceProp } from "@/app/api/details/sources-of-finance/route";
 import Risks from "@/app/components/Form/Risks/Risks";
 import Button from "@/app/components/Form/Button";
 
+const PIN_STEP = 1;
+
 const DetailsPage = () => {
   const router = useRouter();
 
@@ -80,7 +82,7 @@ const DetailsPage = () => {
   useEffect(() => {
     AuthenticatedPINScreen(router);
     AuthenticatedScreen(router);
-    CheckPINStep(1, goToNextStep);
+    CheckPINStep(PIN_STEP, goToNextStep);
   }, [router, goToNextStep]);
 
   useEffect(() => {
@@ -171,7 +173,7 @@ const DetailsPage = () => {
   };
 
   return (
-    <Screen activeTabIndex={1}>
+    <Screen activeTabIndex={PIN_STEP}>
       <h4 className="mb-2 mt-2 font-bold">2. Project details</h4>
       <div className="row">
         <FormAlerts />

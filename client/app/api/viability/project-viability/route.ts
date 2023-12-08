@@ -207,6 +207,15 @@ export async function POST(req: NextRequest) {
       });
     });
 
+    await db.projectPIN.update({
+      where: {
+        id: projectPin.id,
+      },
+      data: {
+        step: 5,
+      },
+    });
+
     return ApiResponse(true, "project viability", {});
   } catch (error) {
     console.log(error);

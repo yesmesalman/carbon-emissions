@@ -21,6 +21,8 @@ import TargetSelector, {
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Button from "@/app/components/Form/Button";
 
+const PIN_STEP = 3;
+
 const BenefitsPage = () => {
   const router = useRouter();
 
@@ -48,7 +50,7 @@ const BenefitsPage = () => {
   useEffect(() => {
     AuthenticatedPINScreen(router);
     AuthenticatedScreen(router);
-    CheckPINStep(1, goToNextStep);
+    CheckPINStep(PIN_STEP, goToNextStep);
   }, [router, goToNextStep]);
 
   const GetSectionTableHeader = () => {
@@ -141,7 +143,7 @@ const BenefitsPage = () => {
   };
 
   return (
-    <Screen activeTabIndex={3}>
+    <Screen activeTabIndex={PIN_STEP}>
       <h4 className="mt-2 font-bold">
         4. Environment, economic and social co-benefits
       </h4>

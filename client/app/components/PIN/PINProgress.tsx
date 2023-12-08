@@ -1,4 +1,6 @@
+import { GetProjectPINScreen } from "@/helpers";
 import styles from "./PINProgress.module.css";
+import { useEffect } from "react";
 
 type PINProgressProp = {
   completed: number;
@@ -6,6 +8,13 @@ type PINProgressProp = {
 
 const PINProgress = (props: PINProgressProp) => {
   const { completed } = props;
+  const project_id = GetProjectPINScreen();
+
+  useEffect(() => {
+    if (project_id) {
+      console.log("project_id", project_id)
+    }
+  }, [project_id])
 
   return (
     <div className={styles.container}>

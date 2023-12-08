@@ -17,6 +17,8 @@ import FormAlerts from "@/app/components/Form/FormAlerts";
 import Button from "@/app/components/Form/Button";
 import FieldWarningAlert from "@/app/components/Alerts/FieldWarningAlert";
 
+const PIN_STEP = 2;
+
 const EmissionsPage = () => {
   const router = useRouter();
 
@@ -38,7 +40,7 @@ const EmissionsPage = () => {
   useEffect(() => {
     AuthenticatedPINScreen(router);
     AuthenticatedScreen(router);
-    CheckPINStep(1, goToNextStep);
+    CheckPINStep(PIN_STEP, goToNextStep);
   }, [router, goToNextStep]);
 
   const onPressClose = () => {
@@ -82,7 +84,7 @@ const EmissionsPage = () => {
   };
 
   return (
-    <Screen activeTabIndex={2}>
+    <Screen activeTabIndex={PIN_STEP}>
       <h4 className="mb-2 mt-2 font-bold">
         3. Expected greenhouse gas emission reductions
       </h4>
