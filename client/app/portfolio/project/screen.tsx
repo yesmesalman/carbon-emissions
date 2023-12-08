@@ -29,7 +29,7 @@ const Screen = (props: ScreenProps) => {
       <div className="row mt-3">
         <div className="col-9">{children}</div>
         <div className="col-3">
-          <PINProgress completed={70} />
+          <PINProgress />
         </div>
       </div>
     </div>

@@ -1,46 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HighlightedButtonRow from "../components/HighlightedButtonRow";
-import { AuthenticatedScreen } from "@/helpers";
+import { AuthenticatedScreen, HttpRequest } from "@/helpers";
 import { useRouter } from "next/navigation";
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
+import HighlightedButtonRow from "../components/HighlightedButtonRow";
+import { MdOutlineEdit } from "react-icons/md";
 
 const PortfolioPage = () => {
   const router = useRouter();
-  const [projects, setProjects] = useState([
-    {
-      id: 1,
-      image: "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/0f4c8a89-e026-4521-9da9-ee42652f44dc",
-      title: "Project name",
-      description: "This is a dummy card.",
-    },
-    {
-      id: 2,
-      image: "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/27899f0e-badb-457c-aaea-111d1965f358.jpeg",
-      title: "Project name",
-      description: "This is a dummy card.",
-    },
-    {
-      id: 3,
-      image: "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/2f75fafc-579f-47b5-a320-aa1a21893165.jpeg",
-      title: "Project name",
-      description: "This is a dummy card.",
-    },
-    {
-      id: 4,
-      image: "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/35916011-eb02-4b5a-bf4e-7c8322f18204",
-      title: "Project name",
-      description: "This is a dummy card.",
-    },
-  ]);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     AuthenticatedScreen(router);
   }, [router]);
 
+  useEffect(() => {
+    const getData = () => {
+      const request = HttpRequest("/api/project/get-projects", {});
+      request.then((e) => e.json()).then((e) => setProjects(e?.data));
+    };
+
+    return getData();
+  }, []);
+
   const onPressCreateNewPIN = () => {
-    router.push("/portfolio/project");
+    return router.push("/portfolio/project");
+  };
+
+  const onPressEditProject = (project: any) => {
+    return router.push(`/portfolio/project?project=${project.code}`);
   };
 
   return (
@@ -49,7 +38,7 @@ const PortfolioPage = () => {
         <Breadcrumb
           items={[
             { label: "Dashboard", link: "/dashboard" },
-            { label: "Porfolio", link: "" },
+            { label: "My Porfolio", link: "" },
           ]}
         />
       </div>
@@ -61,17 +50,54 @@ const PortfolioPage = () => {
         />
       </div>
       <div className="row mt-4">
-        {projects.map((p) => (
-          <div className="col-md-3 mb-3" key={`project-${p.id}`}>
-            <div className="card">
-              <img src={p.image} className="card-img-top" alt="Card Image" />
-              <div className="card-body">
-                <h5 className="card-title">{p.title}</h5>
-                <p className="card-text">{p.description}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+        <table className="table">
+          <thead className="thead-dark">
+            <tr>
+              <th scope="col">Project name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Location</th>
+              <th scope="col">Financing</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {projects.map((p, index) => (
+              <tr key={`project-${index}`}>
+                <td>New carbon project</td>
+                <td>
+                  <div className="d-flex flex-column align-items-start">
+                    <div className="badge badge-outline-primary">Energy</div>
+                    <div className="badge badge-outline-primary mt-1">
+                      Energy Efficiency
+                    </div>
+                  </div>
+                </td>
+                <td>Karachi, Pakistan</td>
+                <td>
+                  <div className="d-flex flex-column align-items-start">
+                    <div className="badge badge-primary font-size-12">
+                      Draft
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div className="d-flex flex-column align-items-start">
+                    <div className="badge badge-outline-primary font-size-14">
+                      Step: {p.step}
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div role="button" onClick={() => onPressEditProject(p)}>
+                    <MdOutlineEdit size={16} />
+                    <span className="font-size-14 ml-2">Edit</span>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

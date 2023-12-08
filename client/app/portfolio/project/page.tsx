@@ -1,14 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AuthenticatedScreen, HttpRequest } from "@/helpers";
+import {
+  AuthenticatedScreen,
+  GetProjectPINScreen,
+  HttpRequest,
+} from "@/helpers";
 import { useRouter } from "next/navigation";
 import Screen from "../screen";
 import Button from "@/app/components/Form/Button";
+import { MdOutlineEdit } from "react-icons/md";
 
 const ProjectPage = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+
+  useEffect(() => {
+    const project = GetProjectPINScreen();
+    setSelectedProject(project);
+  }, []);
 
   useEffect(() => {
     AuthenticatedScreen(router);
@@ -30,6 +41,10 @@ const ProjectPage = () => {
       .finally(() => setLoading(false));
   };
 
+  const onPressEditPIN = () => {
+    return router.push(`/portfolio/project/summary?project=${selectedProject}`);
+  };
+
   return (
     <Screen activeTabIndex={0}>
       <h3>Create and share your Project Idea Note</h3>
@@ -39,12 +54,25 @@ const ProjectPage = () => {
         carbon page and share it with your potential project developers.
       </p>
       <div>
-        <Button
-          className="btn btn-primary"
-          onClick={onPressNextStep}
-          label="Next Step"
-          loading={loading}
-        />
+        {selectedProject ? (
+          <Button
+            className="btn btn-primary"
+            onClick={onPressEditPIN}
+            label={
+              <>
+                <MdOutlineEdit size="16" /> <span>Edit PIN</span>
+              </>
+            }
+            loading={loading}
+          />
+        ) : (
+          <Button
+            className="btn btn-primary"
+            onClick={onPressNextStep}
+            label="Next Step"
+            loading={loading}
+          />
+        )}
       </div>
     </Screen>
   );

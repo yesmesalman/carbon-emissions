@@ -1,8 +1,5 @@
 .row {
-  border: 1px solid var(--carbon-primary-color);
-  background-color: var(--carbon-primary-light-color);
-  padding: 10px;
-  padding-left: 20px;
+  padding: 10px 0px;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
@@ -10,6 +7,17 @@
   align-items: center;
 }
 
+.row_style {
+  background-color: var(--carbon-primary-light-color);
+  border: 1px solid var(--carbon-primary-color);
+  padding-left: 20px;
+  padding: 10px;
+}
+
 .title {
+  color: var(--carbon-black-light-color);
+}
+
+.title_style {
   color: var(--carbon-primary-color);
 }

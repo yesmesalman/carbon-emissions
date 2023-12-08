@@ -223,3 +223,29 @@ hr {
   color: var(--carbon-white-color) !important;
   font-weight: 500;
 }
+
+.badge-outline-primary {
+  border: 1px solid var(--carbon-primary-color) !important;
+  color: var(--carbon-primary-color) !important;
+  font-weight: 500;
+}
+
+.table {
+  border-radius: 8px 8px 0px 0px;
+  overflow: hidden;
+}
+
+.table tr > th,
+.table tr > td {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.table tr > td {
+  padding: 16px 8px;
+}
+
+.thead-dark > tr > th {
+  background: var(--carbon-black-color);
+  color: var(--carbon-white-color);
+}

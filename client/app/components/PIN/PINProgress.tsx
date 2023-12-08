@@ -1,30 +1,38 @@
-import { GetProjectPINScreen } from "@/helpers";
+import { GetProjectPINScreen, HttpRequest } from "@/helpers";
 import styles from "./PINProgress.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-type PINProgressProp = {
-  completed: number;
-};
-
-const PINProgress = (props: PINProgressProp) => {
-  const { completed } = props;
+const PINProgress = () => {
   const project_id = GetProjectPINScreen();
+  const [steps, setSteps] = useState(0);
 
   useEffect(() => {
     if (project_id) {
-      console.log("project_id", project_id)
+      const request = HttpRequest("/api/project/check-pin-step", {
+        project: project_id,
+      });
+
+      request
+        .then((e) => e.json())
+        .then((e) => {
+          if (e?.data?.project_pin?.step) {
+            setSteps(e?.data?.project_pin?.step);
+          }
+        });
     }
-  }, [project_id])
+  }, [project_id]);
+
+  const StepPercentage = (100 / 5) * steps;
 
   return (
     <div className={styles.container}>
       <div className={styles.left}>
         <div className={styles.progress_outer}></div>
-        <span className={styles.completed}>{completed}%</span>
+        <span className={styles.completed}>{StepPercentage}%</span>
       </div>
       <div className={styles.right}>
         <span className={styles.title}>PIN progress</span>
-        <span className={styles.warning}>71% is required for PIN creation</span>
+        <span className={styles.warning}>70% is required for PIN creation</span>
       </div>
     </div>
   );
