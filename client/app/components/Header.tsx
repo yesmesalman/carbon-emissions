@@ -10,8 +10,6 @@ const Header = () => {
   const router = useRouter();
   const user = GetLoggedInUser();
 
-  console.log("useruseruseruseruser", user)
-
   const goToSettings = () => {
     router.push("/settings");
   };
@@ -30,7 +28,7 @@ const Header = () => {
           <div className="form-inline">
             <div className={styles.header_btn} onClick={goToSettings}>
               <BiSolidUserCircle color="white" size="30" />
-              <span className="text-white ml-4">Salman Saleem</span>
+              <span className="text-white ml-4">{user?.name}</span>
             </div>
           </div>
         </nav>

@@ -38,11 +38,11 @@ const Sidebar = () => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 sidebar"
-      style={{ width: sidebarOpen ? `280px` : `76px` }}
+      style={{ width: sidebarOpen ? `240px` : `76px` }}
     >
       <div
         className={styles.closeContainer}
-        onClick={() => setSidebarOpen((e) => !e)}
+        // onClick={() => setSidebarOpen((e) => !e)}
       >
         {sidebarOpen ? (
           <AiOutlineClose size="28" />

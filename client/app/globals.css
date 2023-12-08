@@ -55,7 +55,7 @@ a {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -114,8 +114,9 @@ a {
   box-shadow: 4px 1px 15px -14px var(--carbon- -color);
   -webkit-box-shadow: 4px 1px 15px -14px var(--carbon-black-color);
   -moz-box-shadow: 4px 1px 15px -14px var(--carbon-black-color);
-  margin-top: -60px;
+  top: 0;
   padding: 0px !important;
+  z-index: 100;
 }
 
 .bg-light {
