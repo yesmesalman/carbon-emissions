@@ -42,6 +42,7 @@ const ProjectPage = () => {
   };
 
   const onPressEditPIN = () => {
+    setLoading(true);
     return router.push(`/portfolio/project/summary?project=${selectedProject}`);
   };
 

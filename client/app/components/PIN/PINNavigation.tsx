@@ -25,11 +25,12 @@ export const PINTabs = [
 type PINNaviagtionProp = {
   activeIndex: number;
   tabs: TabItem[];
+  project?: string;
 };
 
 const PINNaviagtion = (props: PINNaviagtionProp) => {
   const router = useRouter();
-  const { activeIndex, tabs } = props;
+  const { activeIndex, tabs, project } = props;
 
   return (
     <ul className="nav nav-tabs">
@@ -38,7 +39,11 @@ const PINNaviagtion = (props: PINNaviagtionProp) => {
           <a
             className={`nav-link ${activeIndex >= index && "active"}`}
             href="#!"
-            onClick={() => router.push(tab.link)}
+            onClick={() => {
+              if (project) return router.push(`${tab.link}?project=${project}`);
+
+              return router.push(tab.link);
+            }}
           >
             {tab.label}
           </a>

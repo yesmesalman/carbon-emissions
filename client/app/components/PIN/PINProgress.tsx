@@ -1,6 +1,8 @@
 import { GetProjectPINScreen, HttpRequest } from "@/helpers";
 import styles from "./PINProgress.module.css";
 import { useEffect, useState } from "react";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 const PINProgress = () => {
   const project_id = GetProjectPINScreen();
@@ -27,8 +29,16 @@ const PINProgress = () => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <div className={styles.progress_outer}></div>
-        <span className={styles.completed}>{StepPercentage}%</span>
+        <div style={{ width: 70, height: 70 }}>
+          <CircularProgressbar
+            value={StepPercentage}
+            text={`${StepPercentage}%`}
+            styles={buildStyles({
+              pathColor: `#6a4a99`,
+              textColor: "#6a4a99",
+            })}
+          />
+        </div>
       </div>
       <div className={styles.right}>
         <span className={styles.title}>PIN progress</span>

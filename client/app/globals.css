@@ -5,8 +5,7 @@
   --carbon-white-color: #f9f9f9;
   --carbon-green-color: #28a745;
   --carbon-white-light-color: #ffffff;
-  --carbon-primary-color: #6f13c7;
-  /* #6a4a99; */
+  --carbon-primary-color: #6a4a99;
   --carbon-secondary-color: #9d79c9;
   --carbon-primary-light-color: #f6f0ff;
   --carbon-black-light-color: #696969ba;
@@ -61,6 +60,10 @@ a {
 
 .text-white {
   color: var(--carbon-white-color);
+}
+
+.text-light-black {
+  color: var(--carbon-black-light-color);
 }
 
 .text-green {

@@ -216,6 +216,14 @@ export function AuthenticatedPINScreen(router: any) {
   return e;
 }
 
+export function AuthenticatedProjectScreen(router: any) {
+  const e = GetProjectPINScreen();
+  if (!e) {
+    return router.push(`/portfolio/project`);
+  }
+  return e;
+}
+
 export function GetProjectPINScreen() {
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);

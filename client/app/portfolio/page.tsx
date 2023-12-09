@@ -84,7 +84,7 @@ const PortfolioPage = () => {
                 <td>
                   <div className="d-flex flex-column align-items-start">
                     <div className="badge badge-outline-primary font-size-14">
-                      Step: {p.step}
+                      {p.step}/6 Completed
                     </div>
                   </div>
                 </td>
