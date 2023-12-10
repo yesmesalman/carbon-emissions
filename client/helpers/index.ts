@@ -64,6 +64,20 @@ export function getLoggedInUser(token: any) {
   return user?.user;
 }
 
+export function HttpRequestFile(url: string, body: any) {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "multipart/form-data");
+
+  const response = fetch(url, {
+    method: "POST",
+    body: body,
+    headers: myHeaders,
+    // redirect: "follow",
+  });
+
+  return response;
+}
+
 export function HttpRequest(url: string, body: object) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -80,7 +94,7 @@ export function HttpRequest(url: string, body: object) {
     method: "POST",
     headers: myHeaders,
     body: raw,
-    redirect: "follow",
+    // redirect: "follow",
   };
 
   return fetch(url, requestOptions);

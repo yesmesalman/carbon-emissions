@@ -345,3 +345,44 @@ model PINViabilityKeyMeasurement {
 
   @@map("pin_viability_seasurements")
 }
+
+model PorjectOverview {
+  id                   Int    @id @default(autoincrement())
+  project_id           Int
+  name                 String
+  description          String @db.Text()
+  image                String
+  address              String
+  country              String
+  latitude             String
+  longitude            String
+  challenge            String @db.Text()
+  solution             String @db.Text()
+  team                 String @db.Text()
+  details              String @db.Text()
+  headquarters_address String
+  registration_number  String
+  year_established     String
+  number_of_employees  String
+  about                String
+  email                String
+  phone                String
+  twitter              String
+  linkedin             String
+  facebook             String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  @@map("project_overview")
+}
+
+model ProjectOverviewCategory {
+  id          Int      @id @default(autoincrement())
+  project_id  Int
+  category_id Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+
+  @@map("project_overview_categories")
+}
