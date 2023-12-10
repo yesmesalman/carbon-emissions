@@ -172,21 +172,24 @@ model KeyMeasurement {
 }
 
 model ProjectCategory {
-  id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(255)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  id                      Int                       @id @default(autoincrement())
+  name                    String                    @db.VarChar(255)
+  createdAt               DateTime                  @default(now())
+  updatedAt               DateTime                  @default(now())
+  ProjectOverviewCategory ProjectOverviewCategory[]
 
   @@map("project_categories")
 }
 
 model Project {
-  id        Int      @id @default(autoincrement())
-  user_id   Int
-  code      String   @db.VarChar(255)
-  step      Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  id                        Int                       @id @default(autoincrement())
+  user_id                   Int
+  code                      String                    @db.VarChar(255)
+  step                      Int
+  createdAt                 DateTime                  @default(now())
+  updatedAt                 DateTime                  @default(now())
+  PorjectOverview           PorjectOverview[]
+  PorjectOverviewCategories ProjectOverviewCategory[]
 
   @@map("projects")
 }
@@ -374,15 +377,19 @@ model PorjectOverview {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
+  overview Project @relation(fields: [project_id], references: [id])
+
   @@map("project_overview")
 }
 
 model ProjectOverviewCategory {
-  id          Int      @id @default(autoincrement())
+  id          Int             @id @default(autoincrement())
   project_id  Int
   category_id Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @default(now())
+  Project     Project?        @relation(fields: [project_id], references: [id])
+  Category    ProjectCategory @relation(fields: [category_id], references: [id])
 
   @@map("project_overview_categories")
 }

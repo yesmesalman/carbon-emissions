@@ -14,7 +14,7 @@ const OverviewPage = () => {
 
   return (
     <Screen activeTabIndex={5}>
-      <h3>Forwards</h3>
+      <h3>Coming soon...</h3>
     </Screen>
   );
 };

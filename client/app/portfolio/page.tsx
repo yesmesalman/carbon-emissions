@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
 import HighlightedButtonRow from "../components/HighlightedButtonRow";
 import { MdOutlineEdit } from "react-icons/md";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 const PortfolioPage = () => {
   const router = useRouter();
@@ -56,46 +58,69 @@ const PortfolioPage = () => {
               <th scope="col">Project name</th>
               <th scope="col">Category</th>
               <th scope="col">Location</th>
-              <th scope="col">Financing</th>
               <th scope="col">Status</th>
+              <th scope="col">Steps</th>
               <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
-            {projects.map((p, index) => (
-              <tr key={`project-${index}`}>
-                <td>New carbon project</td>
-                <td>
-                  <div className="d-flex flex-column align-items-start">
-                    <div className="badge badge-outline-primary">Energy</div>
-                    <div className="badge badge-outline-primary mt-1">
-                      Energy Efficiency
+            {projects.map((p, index) => {
+              const StepPercentage = (100 / 6) * p.step;
+
+              return (
+                <tr key={`project-${index}`}>
+                  <td>
+                    {p?.PorjectOverview?.[0]?.name
+                      ? p?.PorjectOverview?.[0]?.name
+                      : "New carbon project"}
+                  </td>
+                  <td>
+                    <div className="d-flex flex-column align-items-start">
+                      {p?.PorjectOverviewCategories?.length > 0 && (
+                        <>
+                          {p.PorjectOverviewCategories.map((c) => (
+                            <div
+                              key={`category-${c.id}`}
+                              className="badge badge-outline-primary mt-1"
+                            >
+                              {c?.Category?.name}
+                            </div>
+                          ))}
+                        </>
+                      )}
                     </div>
-                  </div>
-                </td>
-                <td>Karachi, Pakistan</td>
-                <td>
-                  <div className="d-flex flex-column align-items-start">
-                    <div className="badge badge-primary font-size-12">
-                      Draft
+                  </td>
+                  <td>{p?.PorjectOverview?.[0]?.address}</td>
+                  <td>
+                    <div className="d-flex flex-column align-items-start">
+                      <div className="badge badge-primary font-size-12">
+                        Draft
+                      </div>
                     </div>
-                  </div>
-                </td>
-                <td>
-                  <div className="d-flex flex-column align-items-start">
-                    <div className="badge badge-outline-primary font-size-14">
-                      {p.step}/6 Completed
+                  </td>
+                  <td>
+                    <div className="d-flex flex-column align-items-start">
+                      <div style={{ width: 40, height: 40 }}>
+                        <CircularProgressbar
+                          value={StepPercentage}
+                          styles={buildStyles({
+                            pathColor: `#6a4a99`,
+                            textColor: "#6a4a99",
+                            trailColor: "#efeafb",
+                          })}
+                        />
+                      </div>
                     </div>
-                  </div>
-                </td>
-                <td>
-                  <div role="button" onClick={() => onPressEditProject(p)}>
-                    <MdOutlineEdit size={16} />
-                    <span className="font-size-14 ml-2">Edit</span>
-                  </div>
-                </td>
-              </tr>
-            ))}
+                  </td>
+                  <td>
+                    <div role="button" onClick={() => onPressEditProject(p)}>
+                      <MdOutlineEdit size={16} />
+                      <span className="font-size-14 ml-2">Edit</span>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

@@ -8,9 +8,17 @@ export async function POST(req: NextRequest) {
 
     const user = getLoggedInUser(token);
 
-    const projects = await db.project.findMany({
+    var projects = await db.project.findMany({
       where: {
         user_id: user.id,
+      },
+      include: {
+        PorjectOverview: true,
+        PorjectOverviewCategories: {
+          include: {
+            Category: true,
+          },
+        },
       },
     });
 
