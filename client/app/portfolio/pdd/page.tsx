@@ -34,7 +34,7 @@ const OverviewPage = () => {
   }, [router]);
 
   const onPressClose = () => {
-    router.push("/portfolio");
+    router.push("/portfolio/project");
   };
 
   const goToNextStep = useCallback(() => {

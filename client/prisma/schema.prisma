@@ -402,3 +402,18 @@ model ProjectPDD {
 
   @@map("project_pdds")
 }
+
+model ProjectRegistration {
+  id                    Int      @id @default(autoincrement())
+  project_id            Int
+  start_year            String
+  end_year              String
+  carbon_amount         Int
+  registration_date     String
+  proof_of_registration String
+  registry_url          String
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @default(now())
+
+  @@map("project_registrations")
+}
