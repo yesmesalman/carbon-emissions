@@ -386,3 +386,19 @@ model ProjectOverviewCategory {
 
   @@map("project_overview_categories")
 }
+
+model ProjectPDD {
+  id                   Int      @id @default(autoincrement())
+  project_id           Int
+  standard_id          Int
+  methodology_id       Int
+  quarter              String
+  design_document      String
+  validation           String
+  validation_statement String
+  validation_date      String
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @default(now())
+
+  @@map("project_pdds")
+}

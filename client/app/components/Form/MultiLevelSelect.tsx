@@ -151,7 +151,7 @@ const MultiLevelSelect = (props: SelectProps) => {
         id={id}
       >
         <option value="">
-          {selectedOption ? selectedOption.label : "Select Option"}
+          {selectedOption ? selectedOption.label : "Select"}
         </option>
       </select>
     </>

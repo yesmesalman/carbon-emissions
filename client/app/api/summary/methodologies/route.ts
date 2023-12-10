@@ -5,6 +5,9 @@ export type MethodologyProp = {
   id: number;
   name: string;
   link: string | null;
+  value?: string | number;
+  label?: string;
+  childrens?: MethodologyProp[];
 };
 
 export async function POST() {
@@ -16,6 +19,14 @@ export async function POST() {
         link: true,
       },
     });
+
+    await Promise.all(
+      data.map(async (e) => {
+        e.value = e.id;
+        e.label = e.name;
+        e.childrens = [];
+      })
+    );
 
     return ApiResponse(true, "Methodologies", data);
   } catch (error) {

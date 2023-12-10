@@ -252,3 +252,6 @@ hr {
   background: var(--carbon-black-color);
   color: var(--carbon-white-color);
 }
+.cursor-pointer {
+  cursor: pointer;
+}
