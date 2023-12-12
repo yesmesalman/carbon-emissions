@@ -14,7 +14,7 @@
 }
 
 .nav {
-  --bs-nav-link-padding-x: 1.5rem;
+  --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.9rem;
   --bs-nav-tabs-link-active-bg: inherit;
   --bs-nav-tabs-link-active-border-color: var(--carbon-white-color);

@@ -38,22 +38,23 @@ const Sidebar = () => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 sidebar"
-      style={{ width: sidebarOpen ? `240px` : `76px` }}
+      style={{ width: sidebarOpen ? `240px` : `60px` }}
     >
       <div
         className={styles.closeContainer}
         // onClick={() => setSidebarOpen((e) => !e)}
       >
-        {sidebarOpen ? (
+        {/* {sidebarOpen ? (
           <AiOutlineClose size="28" />
         ) : (
           <GrTextAlignLeft size="18" />
-        )}
+        )} */}
       </div>
       <ul className="nav nav-pills flex-column mb-auto mt-10">
         <li
           className="user-select-none border-bottom"
           onClick={navigateToDashbboard}
+          title="Dashboard"
         >
           <a
             href="#"
@@ -65,7 +66,11 @@ const Sidebar = () => {
             {sidebarOpen && <span>Dashboard</span>}
           </a>
         </li>
-        <li className="user-select-none" onClick={navigateToPortfolio}>
+        <li
+          className="user-select-none"
+          onClick={navigateToPortfolio}
+          title="Portfolio"
+        >
           <a
             href="#"
             className={`nav-link ${
@@ -76,7 +81,11 @@ const Sidebar = () => {
             {sidebarOpen && <span>Portfolio</span>}
           </a>
         </li>
-        <li className="user-select-none border-top" onClick={onPressLogout}>
+        <li
+          className="user-select-none border-top"
+          onClick={onPressLogout}
+          title="Logout"
+        >
           <a href="#" className="nav-link link-dark">
             <HiLogout size="24" />
             {sidebarOpen && <span>Logout</span>}
