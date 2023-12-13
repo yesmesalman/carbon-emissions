@@ -1,0 +1,13 @@
+.filter_list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0;
+  padding-left: 0;
+}
+.item {
+  display: flex;
+  flex: 1;
+  padding: 4px;
+  border-radius: 4px;
+}

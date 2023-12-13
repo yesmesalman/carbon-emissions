@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { AuthenticatedScreen, HttpRequest } from "@/helpers";
 import Image from "next/image";
 import HighlightedButtonRow from "../components/HighlightedButtonRow";
+import DashboardFilter from "../components/Dashboard/DashboardFilter";
 
 const PROJECT_PICTURES = [
   "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/0f4c8a89-e026-4521-9da9-ee42652f44dc",
@@ -15,6 +16,7 @@ const PROJECT_PICTURES = [
 
 const DashboardPage = () => {
   const router = useRouter();
+  const [filters, setFilters] = useState<number[]>([]);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -36,10 +38,10 @@ const DashboardPage = () => {
 
   return (
     <div className="container pt-4 pb-5">
-      <div className="row mb-4">
+      <div className="row mb-2">
         <h2>Welcome to CE</h2>
       </div>
-      <div className="row">
+      <div className="row mb-4">
         <HighlightedButtonRow
           title="Create and share your Project Idea Note"
           buttonText="Create New PIN"
@@ -47,7 +49,8 @@ const DashboardPage = () => {
           style={true}
         />
       </div>
-      <div className="row mt-4">
+      <DashboardFilter filters={filters} setFilters={setFilters} />
+      <div className="row mt-2">
         <h5>Projects</h5>
       </div>
       <div className="row">
