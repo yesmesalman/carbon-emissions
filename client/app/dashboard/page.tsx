@@ -6,6 +6,7 @@ import { AuthenticatedScreen, HttpRequest } from "@/helpers";
 import Image from "next/image";
 import HighlightedButtonRow from "../components/HighlightedButtonRow";
 import DashboardFilter from "../components/Dashboard/DashboardFilter";
+import styles from "./dashboard.module.css";
 
 const PROJECT_PICTURES = [
   "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/0f4c8a89-e026-4521-9da9-ee42652f44dc",
@@ -26,7 +27,12 @@ const DashboardPage = () => {
   useEffect(() => {
     const getData = () => {
       const request = HttpRequest("/api/project/get-projects", {});
-      request.then((e) => e.json()).then((e) => setProjects(e?.data));
+      request
+        .then((e) => e.json())
+        .then((e) => {
+          console.log("asaasdadasdf", e?.data);
+          setProjects(e?.data);
+        });
     };
 
     return getData();
@@ -50,13 +56,13 @@ const DashboardPage = () => {
         />
       </div>
       <DashboardFilter filters={filters} setFilters={setFilters} />
-      <div className="row mt-2">
+      <div className="row mt-4 mb-2">
         <h5>Projects</h5>
       </div>
       <div className="row">
         {projects.map((p, index) => (
           <div className="col-md-4 mb-3" key={`project-${index}`}>
-            <div className="card">
+            <div className="card" style={{ height: "100%" }}>
               <Image
                 src={PROJECT_PICTURES[Math.floor(Math.random() * 3)]}
                 className="card-img-top"
@@ -65,8 +71,38 @@ const DashboardPage = () => {
                 height="200"
               />
               <div className="card-body">
-                <h5 className="card-title">Project Name</h5>
-                <p className="card-text">asdfasdf</p>
+                <h6 className="card-title">
+                  {p?.PorjectOverview?.[0]?.name
+                    ? p?.PorjectOverview?.[0]?.name
+                    : "New carbon project"}
+                </h6>
+                {p?.PorjectOverview?.[0]?.address && (
+                  <span className="font-size-14 text-black-light">
+                    {p?.PorjectOverview?.[0]?.address}
+                  </span>
+                )}
+                {p?.PorjectOverview?.[0]?.description && (
+                  <div className={styles.project_description}>
+                    <p
+                      className={`card-text mt-4 font-size-12 text-black-light ${styles.project_description_text}`}
+                    >
+                      {p?.PorjectOverview?.[0]?.description}
+                    </p>
+                  </div>
+                )}
+                <div className="mt-2">
+                  {p?.PorjectOverviewCategories?.length > 0 && (
+                    <>
+                      {p.PorjectOverviewCategories.map((c) => (
+                        <div className="badge badge-outline-primary mr-4" key={`category-${c.id}`}>
+                          <span className="font-size-10">
+                            {c?.Category?.name}
+                          </span>
+                        </div>
+                      ))}
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </div>

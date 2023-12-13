@@ -70,11 +70,19 @@ a {
   color: var(--carbon-green-color);
 }
 
+.mr-2 {
+  margin-right: 2px;
+}
+
 .ml-2 {
   margin-left: 2px;
 }
 
 .ml-4 {
+  margin-left: 4px;
+}
+
+.mr-4 {
   margin-left: 4px;
 }
 
@@ -186,6 +194,10 @@ a {
   color: var(--carbon-black-light-color);
   display: block;
   font-size: 12px;
+}
+
+.font-size-10 {
+  font-size: 10px;
 }
 
 .font-size-12 {
