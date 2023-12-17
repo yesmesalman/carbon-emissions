@@ -71,7 +71,7 @@ const DashboardPage = () => {
                 height="200"
               />
               <div className="card-body">
-                <h6 className="card-title">
+                <h6 className="card-title font-size-14 font-weight-bold">
                   {p?.PorjectOverview?.[0]?.name
                     ? p?.PorjectOverview?.[0]?.name
                     : "New carbon project"}
