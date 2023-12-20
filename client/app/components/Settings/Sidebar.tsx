@@ -8,12 +8,14 @@ import { PerformLogout } from "@/helpers";
 const Sidebar = () => {
   const router = useRouter();
   const [currentActivePath, setCurrentActivePath] = useState(
-    window.location.pathname ?? "/settings/profile_settings"
+    "/settings/profile_settings"
   );
 
   useEffect(() => {
-    var currentPathname = window.location.pathname;
-    setCurrentActivePath(currentPathname);
+    if (typeof window !== "undefined") {
+      const currentPathname = window.location.pathname;
+      setCurrentActivePath(currentPathname);
+    }
   }, []);
 
   const goToScreen = (e: string) => {

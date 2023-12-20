@@ -1,4 +1,5 @@
 "use client";
+
 import { HiMiniSquare2Stack } from "react-icons/hi2";
 import { AiOutlineClose } from "react-icons/ai";
 import { GrTextAlignLeft } from "react-icons/gr";
@@ -12,13 +13,13 @@ import { LuLayoutDashboard } from "react-icons/lu";
 const Sidebar = () => {
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [currentActivePath, setCurrentActivePath] = useState(
-    window.location.pathname ?? "/dashboard"
-  );
+  const [currentActivePath, setCurrentActivePath] = useState("/dashboard");
 
   useEffect(() => {
-    var currentPathname = window.location.pathname;
-    setCurrentActivePath(currentPathname);
+    if (typeof window !== "undefined") {
+      const currentPathname = window.location.pathname;
+      setCurrentActivePath(currentPathname);
+    }
   }, []);
 
   const navigateToDashbboard = () => {
