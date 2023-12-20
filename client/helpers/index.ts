@@ -23,7 +23,7 @@ export function ApiResponse(
     };
   }
 
-  if (validation) {
+  if (validation === true) {
     statusResponse = {
       status: 200,
     };
@@ -31,7 +31,10 @@ export function ApiResponse(
     data = validationArr;
   }
 
-  return NextResponse.json({ success, message, data }, statusResponse);
+  return NextResponse.json(
+    { success, message, data, args: arguments },
+    statusResponse
+  );
 }
 
 export function Encrypt(e: any) {
@@ -171,17 +174,22 @@ export function ShowSuccessAlert(message: string) {
 }
 
 export function saveInLocalStorage(key: string, e: any) {
-  localStorage.setItem(key, JSON.stringify(e));
+  if (typeof window !== "undefined") {
+    localStorage.setItem(key, JSON.stringify(e));
+  }
 }
 
 export function getFromLocalStorage(key: string) {
-  var retrieved = localStorage.getItem(key);
+  if (typeof window !== "undefined") {
+    var retrieved = localStorage.getItem(key);
 
-  if (retrieved !== null) {
-    return JSON.parse(retrieved);
-  } else {
-    return undefined;
+    if (retrieved !== null) {
+      return JSON.parse(retrieved);
+    } else {
+      return undefined;
+    }
   }
+  return undefined;
 }
 
 export function NonAuthenticatedScreen(router: any) {
@@ -202,7 +210,9 @@ export function AuthenticatedScreen(router: any) {
 
 export function PerformLogout(router: any) {
   if (confirm("Are you sure you want to log out?")) {
-    localStorage.clear();
+    if (typeof window !== "undefined") {
+      localStorage.clear();
+    }
     return router.push("/login");
   }
 }
@@ -243,10 +253,13 @@ export function AuthenticatedProjectScreen(router: any) {
 }
 
 export function GetProjectPINScreen() {
-  const queryString = window.location.search;
-  const params = new URLSearchParams(queryString);
-  const e = params.get("project");
-  return e;
+  if (typeof window !== "undefined") {
+    const queryString = window.location.search;
+    const params = new URLSearchParams(queryString);
+    const e = params.get("project");
+    return e;
+  }
+  return null;
 }
 
 export function CheckPINStep(step: number, callback: any) {
