@@ -22,6 +22,7 @@ const deSelectAllSelect = () => {
   const elements = document.querySelectorAll(".multi-level-select select");
 
   elements.forEach((selectElement) => {
+    // @ts-ignore
     selectElement.value = "";
   });
 };
@@ -63,6 +64,7 @@ const MultiLevelSelect = (props: SelectProps) => {
 
     if (option?.childrens && option?.childrens.length > 0) {
       setSelectedOption(undefined);
+      // @ts-ignore
       setTitles([...titles, option.label]);
 
       let updatedTree = [...selectionTree];

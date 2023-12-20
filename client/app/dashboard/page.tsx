@@ -7,6 +7,7 @@ import Image from "next/image";
 import HighlightedButtonRow from "../components/HighlightedButtonRow";
 import DashboardFilter from "../components/Dashboard/DashboardFilter";
 import styles from "./dashboard.module.css";
+import { ProjectProp } from "../api/project/get-projects/route";
 
 const PROJECT_PICTURES = [
   "https://evercity-carbon-public-store.s3.eu-central-1.amazonaws.com/0f4c8a89-e026-4521-9da9-ee42652f44dc",
@@ -18,7 +19,7 @@ const PROJECT_PICTURES = [
 const DashboardPage = () => {
   const router = useRouter();
   const [filters, setFilters] = useState<number[]>([]);
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<ProjectProp[]>([]);
 
   useEffect(() => {
     AuthenticatedScreen(router);
@@ -27,12 +28,7 @@ const DashboardPage = () => {
   useEffect(() => {
     const getData = () => {
       const request = HttpRequest("/api/project/get-projects", {});
-      request
-        .then((e) => e.json())
-        .then((e) => {
-          console.log("asaasdadasdf", e?.data);
-          setProjects(e?.data);
-        });
+      request.then((e) => e.json()).then((e) => setProjects(e?.data));
     };
 
     return getData();
@@ -94,7 +90,10 @@ const DashboardPage = () => {
                   {p?.PorjectOverviewCategories?.length > 0 && (
                     <>
                       {p.PorjectOverviewCategories.map((c) => (
-                        <div className="badge badge-outline-primary mr-4" key={`category-${c.id}`}>
+                        <div
+                          className="badge badge-outline-primary mr-4"
+                          key={`category-${c.id}`}
+                        >
                           <span className="font-size-10">
                             {c?.Category?.name}
                           </span>

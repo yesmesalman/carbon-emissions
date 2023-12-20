@@ -732,7 +732,7 @@ const BenefitsPage = () => {
                     <path
                       stroke-width="1.6"
                       stroke="currentColor"
-                      class="color stroke"
+                      className="color stroke"
                       fill-rule="nonzero"
                       stroke-linejoin="round"
                       d="m25.688 25.942 6.203-3.576-6.104-3.519-6.203 3.576zM19.583 36.611l6.203-3.575-6.104-3.519-6.203 3.576zM25.718 40.124l6.203 3.575v-7.037l-6.203-3.576z"

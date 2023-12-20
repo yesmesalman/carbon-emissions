@@ -30,6 +30,8 @@
   },
   "devDependencies": {
     "@prisma/client": "5.4.2",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/validator": "^13.11.7",
     "prisma": "5.4.2",
     "typescript": "^5.2.2"
   }

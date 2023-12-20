@@ -8,10 +8,11 @@ import HighlightedButtonRow from "../components/HighlightedButtonRow";
 import { MdOutlineEdit } from "react-icons/md";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { ProjectProp } from "../api/project/get-projects/route";
 
 const PortfolioPage = () => {
   const router = useRouter();
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<ProjectProp[]>([]);
 
   useEffect(() => {
     AuthenticatedScreen(router);

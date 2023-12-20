@@ -1,6 +1,21 @@
 import { ApiResponse, generateRandomString, getLoggedInUser } from "@/helpers";
 import db from "../../../../helpers/db";
 import { NextRequest } from "next/server";
+import {
+  Project,
+  PorjectOverview,
+  ProjectOverviewCategory,
+  ProjectCategory,
+} from "@prisma/client";
+
+type ProjectOverviewCategoryProp = ProjectOverviewCategory & {
+  Category: ProjectCategory;
+};
+
+export type ProjectProp = Project & {
+  PorjectOverview: PorjectOverview[];
+  PorjectOverviewCategories: ProjectOverviewCategoryProp[];
+};
 
 export async function POST(req: NextRequest) {
   try {
@@ -8,7 +23,7 @@ export async function POST(req: NextRequest) {
 
     const user = getLoggedInUser(token);
 
-    var projects = await db.project.findMany({
+    var projects: Project[] = await db.project.findMany({
       where: {
         user_id: user.id,
       },

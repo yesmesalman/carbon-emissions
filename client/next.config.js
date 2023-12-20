@@ -8,6 +8,12 @@ const nextConfig = {
             },
         ],
     },
+    env: {
+        DATABASE_URL: process.env.DATABASE_URL,
+        DEFAULT_USER_ROLE_ID: process.env.DEFAULT_USER_ROLE_ID,
+        DEFAULT_USER_PASSWORD: process.env.DEFAULT_USER_PASSWORD,
+        JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
+    },
 }
 
 module.exports = nextConfig

@@ -198,7 +198,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    key_measurements.forEach(async (k) => {
+    key_measurements.forEach(async (k: any) => {
       await db.pINViabilityKeyMeasurement.create({
         data: {
           pin_viability_id: viability.id,

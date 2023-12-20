@@ -45,6 +45,7 @@ export function Decrypt(e: any) {
 }
 
 export function createToken(data: any) {
+  // @ts-ignore
   const token = jwt.sign(data, process.env.JWT_SECRET_KEY, {
     // expiresIn: "2h",
   });
@@ -53,6 +54,7 @@ export function createToken(data: any) {
 }
 
 export function verifyToken(token: any) {
+  // @ts-ignore
   const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
   return decoded;
@@ -61,6 +63,7 @@ export function verifyToken(token: any) {
 export function getLoggedInUser(token: any) {
   let user = verifyToken(token);
 
+  // @ts-ignore
   return user?.user;
 }
 
@@ -85,6 +88,7 @@ export function HttpRequest(url: string, body: object) {
   const config = getFromLocalStorage("CONFIG");
 
   if (config?.token) {
+    // @ts-ignore
     body.token = config?.token;
   }
 
