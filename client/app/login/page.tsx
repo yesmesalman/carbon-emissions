@@ -62,7 +62,7 @@ const LoginPage = () => {
   return (
     <div className="page-center">
       <div className="shadow p-3 mb-5 bg-white rounded p-5 d-flex flex-column justify-conent-center align-items-center w-25">
-        <h3 className="mb-4">Login account</h3>
+        <h3 className="mb-4">Login account v1</h3>
         <form className="w-100 d-flex flex-column justify-conent-center align-items-center">
           <div className="w-100">
             <FormAlerts />
