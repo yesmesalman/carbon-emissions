@@ -52,7 +52,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     return ApiResponse(true, "Files uploaded successfully", { urls });
   } catch (error) {
-    console.error("Error:", error);
     return ApiResponse(false, "Error uploading files", []);
   }
 }

@@ -41,3 +41,9 @@
   cursor: pointer;
   user-select: none;
 }
+
+.header_profile_image {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}

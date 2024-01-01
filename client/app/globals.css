@@ -82,6 +82,10 @@ a {
   margin-left: 4px;
 }
 
+.ml-8 {
+  margin-left: 8px;
+}
+
 .mr-4 {
   margin-left: 4px;
 }
@@ -225,6 +229,11 @@ a {
 .text-white {
   color: var(--carbon-white-color);
 }
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
 hr {
   border-color: var(--carbon-primary-color);
   opacity: 1;
