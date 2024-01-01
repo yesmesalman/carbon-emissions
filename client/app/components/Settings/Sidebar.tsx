@@ -37,7 +37,7 @@ const Sidebar = () => {
           currentActivePath === "/settings/profile_settings"
             ? "text-primary fw-bold"
             : "nav-link link-dark"
-        }`}
+        } text-start`}
         type="button"
         role="tab"
         onClick={() => goToScreen("/settings/profile_settings")}
@@ -49,7 +49,7 @@ const Sidebar = () => {
           currentActivePath === "/settings/manage_users"
             ? "text-primary fw-bold"
             : "nav-link link-dark"
-        }`}
+        } text-start`}
         type="button"
         role="tab"
         onClick={() => goToScreen("/settings/manage_users")}
@@ -57,7 +57,7 @@ const Sidebar = () => {
         Manage users
       </button>
       <button
-        className={`nav-link ${styles.nav_link} link-dark`}
+        className={`nav-link ${styles.nav_link} link-dark text-start`}
         type="button"
         role="tab"
         onClick={onPressLogout}
