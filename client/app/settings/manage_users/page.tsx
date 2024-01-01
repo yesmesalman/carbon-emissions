@@ -8,22 +8,23 @@ import { AuthenticatedScreen } from "@/helpers";
 
 const ManageUsersPage = () => {
   const router = useRouter();
-  
+
   useEffect(() => {
     AuthenticatedScreen(router);
   }, [router]);
 
   return (
-    <div className="pt-4 pb-5">
-      <Breadcrumb
-        items={[
-          { label: "Dashboard", link: "/dashboard" },
-          { label: "Settings", link: "" },
-          { label: "Manage Users", link: "" },
-        ]}
-      />
-
-      <div className="container mt-5">
+    <div className="pt-4">
+      <div className="container">
+        <div className="mb-5">
+          <Breadcrumb
+            items={[
+              { label: "Dashboard", link: "/dashboard" },
+              { label: "Settings", link: "" },
+              { label: "Manage Users", link: "" },
+            ]}
+          />
+        </div>
         <div className="d-flex align-items-start">
           <Sidebar />
           <div className="tab-content w-100">

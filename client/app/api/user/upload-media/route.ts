@@ -11,14 +11,14 @@ AWS.config.update({
 
 const s3 = new AWS.S3();
 
-export const GetFileExtension = (file: any) => {
+const GetFileExtension = (file: any) => {
   const exArr = file.name.split(".");
   const ex = exArr[exArr.length - 1];
 
   return ex;
 };
 
-export const UploadMediaToS3 = async (file: any, model: any, model_id: any) => {
+const UploadMediaToS3 = async (file: any, model: any, model_id: any) => {
   try {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
