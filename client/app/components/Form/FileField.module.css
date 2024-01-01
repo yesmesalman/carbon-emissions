@@ -1,0 +1,8 @@
+.loading_container {
+  height: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}

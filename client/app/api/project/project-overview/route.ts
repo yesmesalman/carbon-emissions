@@ -9,6 +9,7 @@ export async function POST(req: NextRequest) {
       name,
       categories,
       description,
+      image,
       address,
       country,
       latitude,
@@ -68,6 +69,15 @@ export async function POST(req: NextRequest) {
         {
           field: "project_description",
           message: "Please write description",
+        },
+      ]);
+    }
+
+    if (isEmpty(image)) {
+      return ApiResponse(false, "", [], true, [
+        {
+          field: "project_image",
+          message: "Please Select Project Image",
         },
       ]);
     }
@@ -237,7 +247,7 @@ export async function POST(req: NextRequest) {
     const data = {
       project_id: selectedProject.id,
       name,
-      image: "",
+      image: image,
       description,
       address,
       country,
