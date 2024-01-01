@@ -42,6 +42,7 @@ export async function POST(req: NextRequest) {
         name: true,
         username: true,
         role_id: true,
+        profile_picture: true,
       },
     });
 

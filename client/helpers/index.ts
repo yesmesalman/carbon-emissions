@@ -70,12 +70,19 @@ export function getLoggedInUser(token: any) {
   return user?.user;
 }
 
-export function HttpRequestFile(url: string, files: any[]) {
+export function HttpRequestFile(
+  url: string,
+  files: any[],
+  model: string,
+  model_id: Number | undefined
+) {
   var myHeaders = new Headers();
   // myHeaders.append("Content-Type", "application/json");
 
   var formdata = new FormData();
-  files.forEach((file, index) => {
+  formdata.append("model", model);
+  formdata.append("model_id", String(model_id));
+  files.forEach((file) => {
     formdata.append("files[]", file);
   });
 

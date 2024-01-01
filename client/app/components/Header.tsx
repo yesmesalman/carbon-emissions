@@ -6,10 +6,12 @@ import { useRouter } from "next/navigation";
 import { GetLoggedInUser } from "@/helpers";
 import DEFAULT_IMAGE from "./../../assets/images/DEFAULT.jpg";
 import Image from "next/image";
+import { useUser } from "@/Contexts/UserContext";
 
 const Header = () => {
+  const { user } = useUser();
+  // console.log("useruser", user)
   const router = useRouter();
-  const user = GetLoggedInUser();
 
   const goToSettings = () => {
     router.push("/settings");
@@ -30,8 +32,12 @@ const Header = () => {
             <div className={styles.header_btn} onClick={goToSettings}>
               <Image
                 className={styles.header_profile_image}
-                src={DEFAULT_IMAGE}
-                alt={user?.name}
+                src={
+                  user?.profile_picture ? user.profile_picture : DEFAULT_IMAGE
+                }
+                alt={user?.name ?? ""}
+                width={30}
+                height={30}
               />
               <span className="text-white text-capitalize ml-8">
                 {user?.name}
