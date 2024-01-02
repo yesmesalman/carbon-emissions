@@ -8,9 +8,10 @@ type FileFieldProp = {
   id: string;
   title: string;
   onChange: (e: any) => void;
+  className?: string;
 };
 
-const FileField = ({ id, title, onChange }: FileFieldProp) => {
+const FileField = ({ id, title, onChange, className }: FileFieldProp) => {
   const { user } = useUser();
   const [loading, setLoading] = useState(false);
 
@@ -48,7 +49,7 @@ const FileField = ({ id, title, onChange }: FileFieldProp) => {
         </div>
       )}
       <input
-        className="form-control"
+        className={className ? className : "form-control"}
         type="file"
         onChange={onChangeFile}
         id={id}

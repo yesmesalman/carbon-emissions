@@ -106,6 +106,10 @@ a {
   font-size: 14px;
 }
 
+.btn-sm {
+  padding: 4px 10px
+}
+
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active {
