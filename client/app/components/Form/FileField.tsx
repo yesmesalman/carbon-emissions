@@ -39,15 +39,13 @@ const FileField = ({ id, title, onChange, className }: FileFieldProp) => {
 
   return (
     <div className="form-group">
-      <label>{title} *</label>
       {loading && (
         <div className={styles.loading_container}>
           <Spinner size={20} borderWidth={1} />
-          <span className="black-light-text font-size-14">
-            Kindly wait to verify and upload the file.
-          </span>
+          <span className="black-light-text font-size-14">Please Wait ...</span>
         </div>
       )}
+      <label htmlFor={id}>{title} *</label>
       <input
         className={className ? className : "form-control"}
         type="file"
