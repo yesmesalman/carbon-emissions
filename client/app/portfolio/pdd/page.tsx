@@ -17,6 +17,7 @@ import MultiLevelSelect, {
 } from "@/app/components/Form/MultiLevelSelect";
 import styles from "./pdd.module.css";
 import Button from "@/app/components/Form/Button";
+import FileField from "@/app/components/Form/FileField";
 
 const OverviewPage = () => {
   const router = useRouter();
@@ -26,7 +27,9 @@ const OverviewPage = () => {
     undefined
   );
   const [quarter, setQuarter] = useState<string>("");
+  const [designDocument, setDesignDocument] = useState<string>("");
   const [validator, setValidator] = useState<string>("");
+  const [validationStatement, setValidationStatement] = useState<string>("");
   const [validationDate, setValidationDate] = useState<string>("");
 
   useEffect(() => {
@@ -51,6 +54,8 @@ const OverviewPage = () => {
       methodology: methodology?.value,
       quarter,
       validator,
+      design_document: designDocument,
+      validation_statement: validationStatement,
       validationDate,
       project: GetProjectPINScreen(),
     });
@@ -153,9 +158,13 @@ const OverviewPage = () => {
               </div>
             </div>
           </div>
-          <div className="form-group mb-5">
-            <label>Project design documents *</label>
-            <input type="file" className="form-control" id="design_document" />
+          <div className="mb-5">
+            <FileField
+              id="design_document"
+              title="Project design documents"
+              onChange={setDesignDocument}
+              className="form-control"
+            />
           </div>
           <h5 className="mb-0">Validation</h5>
           <p className="text-light-black font-size-12">
@@ -175,12 +184,12 @@ const OverviewPage = () => {
               <option value="DNV">DNV</option>
             </select>
           </div>
-          <div className="form-group mb-5 w-25">
-            <label>Validation statement *</label>
-            <input
-              type="file"
-              className="form-control"
+          <div className="mb-5 w-25">
+            <FileField
               id="validation_statement"
+              title="Validation statement"
+              onChange={setValidationStatement}
+              className="form-control"
             />
           </div>
           <div className="form-group mb-5 w-25">

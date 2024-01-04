@@ -7,7 +7,6 @@ import {
   CleanValidationMessages,
   GetProjectPINScreen,
   HttpRequest,
-  HttpRequestFile,
   ShowValidations,
   ShowWarningAlert,
 } from "@/helpers";
@@ -17,6 +16,7 @@ import FormAlerts from "@/app/components/Form/FormAlerts";
 import Button from "@/app/components/Form/Button";
 import { ProjectCategoryProp } from "@/app/api/project/project-categories/route";
 import countryList from "./../../../helpers/country-list";
+import FileField from "@/app/components/Form/FileField";
 
 const OverviewPage = () => {
   const router = useRouter();
@@ -25,6 +25,7 @@ const OverviewPage = () => {
   const [projectCategories, setProjectCategories] = useState<number[]>([]);
   const [projectDescription, setProjectDescription] = useState("");
   const [projectAddress, setProjectAddress] = useState("");
+  const [projectImage, setProjectImage] = useState();
   const [projectCountry, setProjectCountry] = useState("");
   const [projectLatitude, setProjectLatitude] = useState("");
   const [projectLongitude, setProjectLongitude] = useState("");
@@ -75,8 +76,6 @@ const OverviewPage = () => {
     });
   };
 
-  const onProjectImageChange = (event: any) => {};
-
   const onPressClose = () => {
     router.push("/portfolio/project");
   };
@@ -92,6 +91,7 @@ const OverviewPage = () => {
       name: projectName,
       categories: projectCategories,
       description: projectDescription,
+      image: projectImage,
       address: projectAddress,
       country: projectCountry,
       latitude: projectLatitude,
@@ -207,13 +207,11 @@ const OverviewPage = () => {
           Add an image that will visually present your project on the platform.
         </p>
         <div className="row ml-8 pt-2">
-          <div className="form-group mb-4">
-            <label>Project image *</label>
-            <input
-              className="form-control"
-              type="file"
-              onChange={onProjectImageChange}
+          <div className="mb-4">
+            <FileField
               id="project_image"
+              title="Project image"
+              onChange={setProjectImage}
             />
           </div>
         </div>

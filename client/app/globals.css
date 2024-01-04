@@ -82,6 +82,10 @@ a {
   margin-left: 4px;
 }
 
+.ml-8 {
+  margin-left: 8px;
+}
+
 .mr-4 {
   margin-left: 4px;
 }
@@ -100,6 +104,10 @@ a {
 
 .btn {
   font-size: 14px;
+}
+
+.btn-sm {
+  padding: 4px 10px
 }
 
 .btn-primary,
@@ -225,6 +233,11 @@ a {
 .text-white {
   color: var(--carbon-white-color);
 }
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
 hr {
   border-color: var(--carbon-primary-color);
   opacity: 1;

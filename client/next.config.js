@@ -6,6 +6,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'evercity-carbon-public-store.s3.eu-central-1.amazonaws.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'carbon-emissions.s3.us-east-2.amazonaws.com',
+            },
         ],
     },
     env: {

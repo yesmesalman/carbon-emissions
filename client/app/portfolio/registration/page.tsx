@@ -13,10 +13,11 @@ import { useRouter } from "next/navigation";
 import Screen from "../screen";
 import FormAlerts from "@/app/components/Form/FormAlerts";
 import Button from "@/app/components/Form/Button";
+import FileField from "@/app/components/Form/FileField";
 
-const YEARS = () => {
-  const startYear = 2015;
-  const endYear = 2050;
+const GET_YEARS = (start = 2015) => {
+  const startYear = start;
+  const endYear = start + 35;
 
   const years = Array.from(
     { length: endYear - startYear + 1 },
@@ -33,6 +34,7 @@ const OverviewPage = () => {
   const [end, setEnd] = useState("");
   const [amount, setAmount] = useState("");
   const [registerationDate, setRegisterationDate] = useState("");
+  const [proofOfReg, setProofOfReg] = useState("");
   const [registyUrl, setRegistyUrl] = useState("");
 
   useEffect(() => {
@@ -55,6 +57,7 @@ const OverviewPage = () => {
       end,
       amount,
       registerationDate,
+      proofOfReg,
       registyUrl,
       project: GetProjectPINScreen(),
     });
@@ -107,10 +110,13 @@ const OverviewPage = () => {
               name="start"
               id="start"
               className="form-control"
-              onChange={(e) => setStart(e.target.value)}
+              onChange={(e) => {
+                setEnd("");
+                setStart(e.target.value);
+              }}
             >
               <option value=""></option>
-              {YEARS().map((year) => (
+              {GET_YEARS().map((year) => (
                 <option key={`year-${year}`} value={year}>
                   {year}
                 </option>
@@ -126,7 +132,7 @@ const OverviewPage = () => {
               onChange={(e) => setEnd(e.target.value)}
             >
               <option value=""></option>
-              {YEARS().map((year) => (
+              {GET_YEARS(start ? Number(start) + 1 : 2015).map((year) => (
                 <option key={`year-${year}`} value={year}>
                   {year}
                 </option>
@@ -156,13 +162,12 @@ const OverviewPage = () => {
               value={registerationDate}
             />
           </div>
-          <div className="form-group mb-5 w-25">
-            <label htmlFor="proof_of_registration">Proof of registration</label>
-            <input
-              type="file"
-              name="proof_of_registration"
+          <div className="mb-5 w-25">
+            <FileField
               id="proof_of_registration"
               className="form-control"
+              title="Proof of registration"
+              onChange={setProofOfReg}
             />
           </div>
         </div>

@@ -1,18 +1,11 @@
-import {
-  ApiResponse,
-  Decrypt,
-  Encrypt,
-  createToken,
-  getLoggedInUser,
-  verifyToken,
-} from "@/helpers";
+import { ApiResponse, getLoggedInUser } from "@/helpers";
 import db from "../../../../helpers/db";
 import { NextRequest } from "next/server";
 import { isEmpty, isEmail } from "@/helpers/validator";
 
 export async function POST(req: NextRequest) {
   try {
-    const { token, name, username } = await req.json();
+    const { token, name, username, profile_picture } = await req.json();
 
     if (isEmpty(token)) {
       return ApiResponse(false, "", [], true, [
@@ -61,19 +54,42 @@ export async function POST(req: NextRequest) {
       ]);
     }
 
-    await db.user.update({
+    const updateData = {
+      name,
+      username,
+    };
+
+    if (profile_picture) {
+      // @ts-ignore
+      updateData.profile_picture = profile_picture;
+    }
+
+    const updatedUser = await db.user.update({
       where: {
         id: user?.id,
       },
-      data: {
-        name,
-        username,
+      data: updateData,
+    });
+
+    const newUser = await db.user.findUnique({
+      where: {
+        id: updatedUser.id,
+      },
+      select: {
+        id: true,
+        email: true,
+        name: true,
+        username: true,
+        role_id: true,
+        profile_picture: true,
       },
     });
 
     return ApiResponse(true, "User Profile updated", {
       token: token,
-      user: verifyToken(token),
+      user: {
+        user: newUser
+      },
     });
   } catch (error) {
     return ApiResponse(false, error, []);

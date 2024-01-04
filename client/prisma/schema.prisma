@@ -8,14 +8,15 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  username  String   @unique
-  email     String   @unique
-  password  String
-  role_id   Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  id              Int      @id @default(autoincrement())
+  name            String
+  username        String   @unique
+  email           String   @unique
+  password        String
+  role_id         Int
+  profile_picture String   @default("")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now())
 
   @@map("users")
 }
@@ -423,4 +424,31 @@ model ProjectRegistration {
   updatedAt             DateTime @default(now())
 
   @@map("project_registrations")
+}
+
+model Media {
+  id                     Int      @id @default(autoincrement())
+  etag                   String
+  server_side_encryption String
+  location               String
+  key                    String
+  bucket                 String
+  model                  String
+  model_id               Int
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @default(now())
+
+  @@map("medias")
+}
+
+model ProjectDocument {
+  id         Int      @id @default(autoincrement())
+  project_id Int
+  type       String
+  title      String
+  document   String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
+
+  @@map("project_documents")
 }

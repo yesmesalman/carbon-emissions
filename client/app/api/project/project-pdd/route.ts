@@ -9,7 +9,9 @@ export async function POST(req: NextRequest) {
       standard,
       methodology,
       quarter,
+      design_document,
       validator,
+      validation_statement,
       validationDate,
       project,
     } = await req.json();
@@ -56,11 +58,29 @@ export async function POST(req: NextRequest) {
       ]);
     }
 
+    if (isEmpty(design_document)) {
+      return ApiResponse(false, "", [], true, [
+        {
+          field: "design_document",
+          message: "Please select design document",
+        },
+      ]);
+    }
+
     if (isEmpty(validator)) {
       return ApiResponse(false, "", [], true, [
         {
           field: "validator",
           message: "Please select validator",
+        },
+      ]);
+    }
+
+    if (isEmpty(validation_statement)) {
+      return ApiResponse(false, "", [], true, [
+        {
+          field: "validation_statement",
+          message: "Please select validation statement",
         },
       ]);
     }
@@ -85,9 +105,9 @@ export async function POST(req: NextRequest) {
       standard_id: standard,
       methodology_id: methodology,
       quarter: quarter,
-      design_document: "",
+      design_document: design_document,
       validation: validator,
-      validation_statement: "",
+      validation_statement: validation_statement,
       validation_date: validationDate,
     };
 

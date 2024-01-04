@@ -5,8 +5,15 @@ import { isEmpty } from "@/helpers/validator";
 
 export async function POST(req: NextRequest) {
   try {
-    const { start, end, amount, registerationDate, registyUrl, project } =
-      await req.json();
+    const {
+      start,
+      end,
+      amount,
+      registerationDate,
+      proofOfReg,
+      registyUrl,
+      project,
+    } = await req.json();
 
     const selectedProject = await db.project.findFirst({
       where: {
@@ -59,6 +66,15 @@ export async function POST(req: NextRequest) {
       ]);
     }
 
+    if (isEmpty(proofOfReg)) {
+      return ApiResponse(false, "", [], true, [
+        {
+          field: "proof_of_registration",
+          message: "Please select proof of registration",
+        },
+      ]);
+    }
+
     if (isEmpty(registyUrl)) {
       return ApiResponse(false, "", [], true, [
         {
@@ -74,7 +90,7 @@ export async function POST(req: NextRequest) {
       end_year: end,
       carbon_amount: Number(amount),
       registration_date: registerationDate,
-      proof_of_registration: "",
+      proof_of_registration: proofOfReg,
       registry_url: registyUrl,
     };
 

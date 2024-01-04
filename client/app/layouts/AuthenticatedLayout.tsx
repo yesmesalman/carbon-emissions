@@ -3,6 +3,7 @@ import "./../globals.css";
 import type { Metadata } from "next";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import RootContext from "./../../Contexts/RootContext";
 
 const poppins = Poppins({
   weight: ["400", "700"],
@@ -23,11 +24,13 @@ export default function AuthenticatedLayout({
   return (
     <html>
       <body className={poppins.className}>
-        <Header />
-        <main>
-          <Sidebar />
-          <div>{children}</div>
-        </main>
+        <RootContext>
+          <Header />
+          <main>
+            <Sidebar />
+            <div>{children}</div>
+          </main>
+        </RootContext>
       </body>
     </html>
   );

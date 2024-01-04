@@ -12,8 +12,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import FormAlerts from "../components/Form/FormAlerts";
 import Button from "../components/Form/Button";
+import { useUser } from "@/Contexts/UserContext";
 
 const LoginPage = () => {
+  const { updateUser } = useUser();
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,6 +45,17 @@ const LoginPage = () => {
         if (!e?.success) {
           return ShowWarningAlert(e?.message);
         }
+
+        // updateUser({
+        //   token: e?.data?.token,
+        //   id: e?.data.user.user.id,
+        //   email: e?.data.user.user.email,
+        //   name: e?.data.user.user.name,
+        //   username: e?.data.user.user.username,
+        //   role_id: e?.data.user.user.role_id,
+        //   profile_picture: e?.data.user.user.profile_picture,
+        //   iat: e?.iat,
+        // });
 
         saveInLocalStorage("CONFIG", e?.data);
         router.push("/dashboard");
